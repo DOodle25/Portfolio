@@ -1,0 +1,215 @@
+/* Pre Loader */
+.preloader {
+  background: black;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 10000;
+}
+
+/* Hover Cursor */
+
+/* landing section */
+.container {
+  overflow: hidden; /* Prevents content from spilling out */
+  height: 100vh;
+  width: 100vw; /* Ensures container takes full viewport width */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* Ensure it can contain absolutely positioned children */
+}
+
+.object {
+  width: 105%; /* Ensures the image does not exceed viewport width */
+  height: auto; /* Maintain aspect ratio */
+  position: absolute;
+  left: -5%; /* Align left edge */
+  top: -5%; /* Align top edge */
+}
+.object {
+  object-fit: contain; /* Ensures the image fits within the container */
+}
+
+#object4 {
+  left: 10%;
+  width: 55%;
+}
+
+.as1 {
+  animation: slideDown2 0s forwards;
+}
+
+.as2 {
+  animation: slideDown2 3s forwards;
+}
+
+.as3 {
+  animation: slideDown1 3s forwards;
+}
+
+.as4 {
+  animation: slideDown4 6s forwards;
+}
+
+.as5 {
+  animation: slideDown2 0s forwards;
+}
+
+.as6 {
+  animation: slideDown2 0s forwards;
+}
+
+@keyframes slideDown1 {
+  from {
+    top: 1%;
+  }
+  to {
+    top: -5%;
+  }
+}
+
+@keyframes slideDown2 {
+  from {
+    top: 3%;
+  }
+  to {
+    top: -5%;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    top: -40%;
+  }
+  to {
+    top: -5%;
+  }
+}
+
+@keyframes slideDown4 {
+  from {
+    top: -40%;
+  }
+  to {
+    top: 5vw;
+  }
+}
+
+/* main section
+.banner-section {
+  top: 0;
+  z-index: 100000000000;
+}
+
+.banner-section a {
+  float: left;
+  text-decoration: none;
+  font-size: 18px;
+  margin-top: 20px;
+  border-radius: 50%;
+  text-align: center;
+  border: 2px solid #ffbf35;
+  color: #ffbf35;
+  margin-left: 10px;
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+} */
+@media (max-aspect-ratio: 3/2) {
+  .object {
+    height: 105vh; /* Adjust width to viewport width */
+    width: auto; /* Maintain aspect ratio */
+  }
+  .container {
+    height: 100vh;
+    width: auto;
+  }
+  #object4 {
+    left: -2%;
+    width: 90%;
+  }
+  @keyframes slideDown4 {
+    from {
+      top: -40%;
+    }
+    to {
+      top: -7vw;
+    }
+  }
+}
+
+/* Additional CSS */
+
+.content-section {
+  padding: 20px;
+  text-align: center;
+  /* background-color: white; */
+}
+
+.content-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.content-section p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .content-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .content-section p {
+    font-size: 0.875rem;
+  }
+}
+
+
+
+.scroll-down-arrow {
+  display: block;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  z-index: 10;
+  cursor: pointer;
+  pointer-events: auto;
+  background-color: rgba(0, 0, 0, 0.5); /* Optional: Background for visibility */
+  padding: 10px;
+  border-radius: 50%; /* Optional: Circular background */
+  color: white; /* Arrow color */
+  animation: bounce 2s infinite; /* Apply the bounce animation */
+}
+
+.scroll-down-text {
+  display: black;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  z-index: 10;
+  cursor: pointer;
+  pointer-events: auto;
+  background-color: rgba(0, 0, 0, 0.5); /* Optional: Background for visibility */
+  padding: 10px;
+  border-radius: 50%; /* Optional: Circular background */
+  color: white; /* Arrow color */
+  animation: bounce 2s infinite; /* Apply the bounce animation */
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0); /* Initial and final position */
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px); /* Move up by 10px */
+  }
+}
+
