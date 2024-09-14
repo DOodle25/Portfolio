@@ -140,7 +140,6 @@ const Parallax = () => {
     // Cleanup function to remove event listeners and intervals
     return () => {
       document.removeEventListener("mousemove", parallax);
-      window.removeEventListener("load", imagesLoadedHandler());
       cleanupChangeWelcomeMessage();
     };
   }, []);
