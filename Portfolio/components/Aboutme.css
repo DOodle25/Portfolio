@@ -246,9 +246,9 @@
 } */
 
 .aboutme-photo img {
-  transform: translateX(-100vw); /* Start off-screen to the left */
-  transition: transform 1s ease, opacity 1s ease;
-  opacity: 0;
+  /* transform: translateX(-100vw); Start off-screen to the left */
+  /* transition: transform 1s ease, opacity 1s ease; */
+  /* opacity: 0; */
 }
 
 /* github */
