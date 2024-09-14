@@ -179,7 +179,7 @@ const Parallax = () => {
         <div className="scroll-down-arrow">↓</div>
         <div className="scroll-down-text">Welcome</div>
         <img
-          src="../src/assets/images/s-0.svg"
+          src="s-0.svg"
           // src="https://drive.google.com/thumbnail?id=1aFfsfxVSgeofszsZqcWxuIO0QflP5UGV"
           alt=""
           data-value="3"
@@ -187,7 +187,7 @@ const Parallax = () => {
           id="object1"
         />
         <img
-          src="../src/assets/images/s-1.svg"
+          src="s-1.svg"
           // src="https://drive.google.com/thumbnail?id=1fuaB1PQh_WGYslKwaJ_TvvV-sbYBEbxO"
           alt=""
           data-value="3"
@@ -195,28 +195,28 @@ const Parallax = () => {
           id="object2"
         />
         <img
-          src="../src/assets/images/s-2.svg"
+          src="s-2.svg"
           alt=""
           data-value="3"
           className="object"
           id="object3"
         />
         <img
-          src="../src/assets/images/name.svg"
+          src="name.svg"
           alt=""
           data-value="10"
           className="object"
           id="object4"
         />
         <img
-          src="../src/assets/images/s-4.svg"
+          src="s-4.svg"
           alt=""
           data-value="2"
           className="object"
           id="object5"
         />
         <img
-          src="../src/assets/images/s-5.svg"
+          src="s-5.svg"
           alt=""
           data-value="2"
           className="object"
