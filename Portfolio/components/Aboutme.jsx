@@ -21,30 +21,30 @@ const Aboutme = () => {
   const photoRef = useRef(null);
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+    // gsap.registerPlugin(ScrollTrigger);
 
-    // Animation for the image
-    gsap.fromTo(
-      photoRef.current,
-      {
-        x: "-100vw",
-        opacity: 1,
-        rotation: 720,
-      },
-      {
-        x: 0,
-        rotation: 0,
-        opacity: 1,
-        duration: 1,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: photoRef.current,
-          start: "top 100%",
-          end: "top 80%",
-          scrub: true,
-        },
-      }
-    );
+    // // Animation for the image
+    // gsap.fromTo(
+    //   photoRef.current,
+    //   {
+    //     x: "-100vw",
+    //     opacity: 1,
+    //     rotation: 720,
+    //   },
+    //   {
+    //     x: 0,
+    //     rotation: 0,
+    //     opacity: 1,
+    //     duration: 1,
+    //     ease: "power2.out",
+    //     scrollTrigger: {
+    //       trigger: photoRef.current,
+    //       start: "top 100%",
+    //       end: "top 80%",
+    //       scrub: true,
+    //     },
+    //   }
+    // );
 
     // Role switcher animation
     const interval = setInterval(() => {
