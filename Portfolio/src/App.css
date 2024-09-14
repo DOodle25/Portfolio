@@ -1,0 +1,9 @@
+html,
+body {
+  /* background-color: hsl(86, 45%, 54%) !important; */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  height: auto; /* Ensure full height */
+  overflow-x: hidden; /* Prevent horizontal overflow */
+  /* overflow-y: hidden; Prevent vertical overflow */
+}
