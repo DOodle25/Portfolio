@@ -1,0 +1,35 @@
+.object0 {
+  opacity: 0.8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 0;
+}
+
+@media (max-aspect-ratio: 1/1) {
+  .object0 {
+    width: auto;
+    height: 100%;
+  }
+}
+.holdering {
+  object-fit: cover;
+  overflow: hidden;
+  position: relative;
+}
+
+.temp {
+  background-color: hsl(87, 43%, 40%);
+}
+
+.shwb {
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+.shwt {
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
