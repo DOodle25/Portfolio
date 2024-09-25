@@ -1,0 +1,659 @@
+
+
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+
+
+:root {
+  --primary-color: #212121;
+  --background-color: #111;
+  --font: sans-serif;
+  
+
+}
+
+
+/* Timeline Container */
+.timeline2 {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+  padding: 20px;
+  padding-top: 20px;
+  margin-top: 0px;
+  padding-bottom: 20px;
+  margin-bottom: 0px;
+  /* background-color: hsl(90, 100%, 98%) !important; */
+}
+
+/* Card container */
+.card2 {
+  position: relative;
+  max-width: 1100px;
+}
+
+/* setting padding based on even or odd */
+.card2:nth-child(odd) {
+  padding: 30px 0 30px 30px;
+}
+.card2:nth-child(even) {
+  padding: 30px 30px 30px 0;
+}
+/* Global ::before */
+.card2::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  max-width: 1100px;
+  /* border: solid hsl(87, 38%, 56%); */
+  border: solid hsl(87, 52%, 58%);
+  border-style: dotted; 
+}
+
+/* Setting the border of top, bottom, left */
+.card2:nth-child(odd)::before {
+  left: 0px;
+  top: -4.5px;
+  bottom: -4.5px;
+  border-width: 5px 0 5px 5px;
+  border-radius: 50px 0 0 50px;
+}
+
+/* Setting the top and bottom to "-5px" because earlier it was out of a pixel in mobile devices */
+@media only screen and (max-width: 400px) {
+  .card2:nth-child(odd)::before {
+    top: -5px;
+    bottom: -5px;
+  }
+}
+
+/* Setting the border of top, bottom, right */
+.card2:nth-child(even)::before {
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-width: 5px 5px 5px 0;
+  border-radius: 0 50px 50px 0;
+}
+
+/* Removing the border if it is the first card */
+.card2:first-child::before {
+  border-top: 0;
+  border-top-left-radius: 0;
+}
+
+/* Removing the border if it is the last card  and it's odd */
+.card2:last-child:nth-child(odd)::before {
+  border-bottom: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* Removing the border if it is the last card  and it's even */
+.card2:last-child:nth-child(even)::before {
+  border-bottom: 0;
+  border-bottom-right-radius: 0;
+}
+
+:root {
+  --background-color: black;
+  --text-color: hsl(0, 0%, 100%);
+}
+/* Title of the card */
+.title2 {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: hsl(86, 45%, 54%);
+  position: relative;
+  font-size: 2em;
+  margin-top: 0;
+  margin-bottom: 0;
+  border-radius: 30px;
+}
+.wrapper2 {
+  font-size: xx-large;
+  display: grid;
+  min-height: 7vh;
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-color);
+}
+/* text right if the card is even  */
+.card2:nth-child(even) > .info2 > .wrapper2 {
+  /* text-align: right !important; */
+  margin-right: 0;
+  margin-left: auto;
+}
+.card2:nth-child(even) > .info2 > .wrapper2 {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+.card2 > .info2 > .wrapper2 > .top2 {
+  margin-left: 10px !important;
+  margin-right: 10px !important;
+  margin-top: 10px !important;
+}
+.card2 > .info2 > .wrapper2 > .bottom2 {
+  margin-left: 10px !important;
+  margin-right: 9px !important;
+  margin-top: 13px !important;
+}
+
+.wrapper2 > div {
+  grid-area: 1/1/-1/-1;
+}
+.top2 {
+  text-shadow: 0vh 0vh 0.3vh hsl(0, 0%, 100%);
+  font-size: xx-large;
+  /* text-shadow: 0.2vh 0.2vh 0.3vh hsl(86, 58%, 32%); */
+  /* color: hsl(86, 58%, 32%); */
+  color: hsl(0, 0%, 100%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 28%, 0% 58%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 100%);
+}
+:root {
+  /* --highlight-color: hsl(86, 41%, 44%); */
+  /* --highlight-color: hsl(0, 0%, 100%); */
+  --highlight-color: hsl(86, 100%, 88%);
+}
+
+.bottom2 {
+  text-shadow: 0vh 0vh 0.3vh hsl(86, 100%, 88%);
+  font-size: xx-large;
+  /* margin-top: 3px; */
+  clip-path: polygon(0% 60%, 100% 30%, 100% 100%, 0% 100%);
+  clip-path: polygon(0% 100%, 100% 0%, 100% 100%, 0% 100%);
+  color: transparent;
+  background: -webkit-linear-gradient(
+    177deg,
+    var(--highlight-color) 53%,
+    var(--highlight-color) 65%
+  );
+  background: linear-gradient(
+    177deg,
+    var(--highlight-color) 53%,
+    var(--highlight-color) 65%
+  );
+  background-clip: text;
+  /* text-shadow: hsl(86, 54%, 56%) 0px 1px 4px; */
+  -webkit-background-clip: text;
+  transform: translateX(-0.02em);
+}
+
+/* Timeline dot  */
+.title2::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 999px;
+  border: 3px solid hsl(86, 47%, 50%);
+}
+
+/* text right if the card is even  */
+.card2:nth-child(even) > .info2 > .title2 {
+  text-align: right;
+}
+
+/* setting dot to the left if the card is odd */
+.card2:nth-child(odd) > .info2 > .title2::before {
+  left: -45px;
+}
+
+/* setting dot to the right if the card is odd */
+.card2:nth-child(even) > .info2 > .title2::before {
+  right: -45px;
+}
+
+.card2:nth-child(even) > .info2 > .category2 {
+  text-align: right;
+}
+
+/* setting dot to the left if the card is odd */
+.card2:nth-child(odd) > .info2 > .category2::before {
+  left: -45px;
+}
+
+/* setting dot to the right if the card is odd */
+.card2:nth-child(even) > .info2 > .category2::before {
+  right: -45px;
+}
+.card2:nth-child(even) > .info2 > .date2 {
+  text-align: right;
+}
+
+/* setting dot to the left if the card is odd */
+.card2:nth-child(odd) > .info2 > .date2::before {
+  left: -45px;
+}
+
+/* setting dot to the right if the card is odd */
+.card2:nth-child(even) > .info2 > .date2::before {
+  right: -45px;
+}
+
+.card2:nth-child(even) > .info2 > .mainContent2 {
+  text-align: right;
+}
+
+/* setting dot to the left if the card is odd */
+.card2:nth-child(odd) > .info2 > .mainContent2::before {
+  left: -45px;
+}
+
+/* setting dot to the right if the card is odd */
+.card2:nth-child(even) > .info2 > .mainContent2::before {
+  right: -45px;
+}
+
+/* .info{
+    border: black 3px solid;
+    border-radius: 30px;
+    padding: 8px;
+  } */
+
+/* Information about the timeline */
+.info2 {
+  /* background: linear-gradient(48deg, hwb(97 76% 8%) 0%, hwb(96 96% 0%) 40%, hwb(90 98% 0%) 45%, hwb(97 76% 8%) 100%); */
+  /* background: linear-gradient(48deg, hsl(86, 45%, 54%) 0%, hsl(86, 51%, 71%) 40%, hsl(86, 54%, 70%) 45%, hsl(86, 45%, 54%) 100%); */
+  /* background-color: hsl(86, 36%, 68%) !important; */
+  /* background-color: hsl(0, 0%, 0%) !important; */
+
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  color: gray;
+  border-radius: 30px;
+  padding: 10px;
+  /* box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px; */
+  /* box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); */
+
+  /* box-shadow: -15px -15px 15px rgba(255, 255, 255, 0.2),
+    15px 15px 15px rgba(0, 0, 0, 0.1),
+    -5px -5px 5px rgba(255, 255, 255, 0.2) inset,
+    5px 5px 5px rgba(0, 0, 0, 0.1) inset; */
+
+    /* box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 90px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px; */
+
+}
+
+/* .card:nth-child(odd) > .info {
+    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+  }
+  
+  .card:nth-child(even) > .info {
+    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+  } */
+
+.date2 {
+  margin-top: 0px;
+  margin-right: 5px;
+  margin-left: 5px;
+  margin-bottom: 0px;
+  color: hsl(86, 45%, 54%);
+  font-size: large;
+}
+
+.category2 {
+  margin-top: 5px;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 0px;
+  font-size: large;
+}
+.date-style2 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: hsl(86, 43%, 38%);
+  border-radius: 10px;
+  padding-top: 0px;
+  padding-bottom: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+.category-style2 {
+  color: hsl(86, 40%, 50%);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding-top: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+
+.mainContent-style2 {
+  color: rgb(0, 0, 0);
+  text-shadow: rgba(255, 255, 255, 255) 0px 2px 8px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding-top: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.style1 {
+  font-weight: 620;
+}
+.style2 {
+  text-shadow: rgba(255, 255, 255, 255) 0px 1px 4px;
+  background-color: hsl(0, 0%, 100%) !important;
+  /* background-color: hsl(90, 100%, 98%) !important; */
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+  color: black;
+  font-weight: 500;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin: 2px;
+  padding-bottom: 4px;
+  border-radius: 10px;
+}
+.style2{
+  background-color: white !important;
+  color: hsl(87, 50%, 44%);
+  text-shadow: none;
+  border: hsl(87, 50%, 44%) 1px solid;
+  border-radius: 0px;
+}
+
+
+
+.style3 {
+}
+.mainContent2 {
+  font-weight: 400;
+  margin: 10px;
+  font-size: large;
+}
+
+.wrapper2 {
+  /* background: linear-gradient(71deg, #080509, #332f35, #2a262c, #080509); */
+  /* background: linear-gradient(71deg, hsl(0, 0%, 14%), hsl(0, 0%, 21%), hsl(0, 0%, 11%)) !important; */
+  /* background-color: hsl(90, 100%, 98%) !important; */
+  width: max-content !important;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 8px;
+  background: linear-gradient(71deg, #080509, #332f35, #2a262c, #080509);
+  margin-bottom: 10px;
+  border-radius: 15px;
+  /* background-color: hsl(86, 58%, 32%); */
+}
+
+/* @media only screen and (max-width: 615px) { */
+/* @media only screen and (max-width: 840px) {
+  .card2:nth-child(even) > .info > .wrapper {
+    margin-right: 0;
+    margin-left: auto;
+  }
+  .card2:nth-child(even) > .info > .wrapper {
+    margin-right: 0;
+    margin-left: auto;
+  }
+  .wrapper2 {
+    text-align: center !important;
+    width: 100% !important;
+  }
+  .top2 {
+    font-size: x-large;
+  }
+  .bottom2 {
+    font-size: x-large;
+  }
+} */
+
+@media only screen and (max-width: 840px) {
+  /* .card2:nth-child(even) > .info > .wrapper {
+    margin-right: 0;
+    margin-left: auto;
+  }
+  .card2:nth-child(even) > .info > .wrapper {
+    margin-right: 0;
+    margin-left: auto;
+  } */
+  .wrapper2 {
+    /* text-align: center !important; */
+    /* width: 100% !important; */
+        width: fit-content !important;
+  }
+  .top2 {
+    font-size: x-large;
+  }
+  .bottom2 {
+    font-size: x-large;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+.top2 {
+  font-size: xx-large;
+}
+.bottom2 {
+  font-size: xx-large;
+}
+}
+
+.Skill-holder2 {
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+}
+
+.card2:nth-child(even) .Skill-holder2 {
+  justify-content: right;
+}
+
+
+.card2:nth-child(odd) > .info2 {
+  box-shadow: 1px 2px 15px 4px rgba(0, 0, 0, 0.2);
+}
+.card2:nth-child(even) > .info2 {
+  box-shadow: -1px 2px 15px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+.style2{
+  font-weight: 600;
+}
+
+.bottom2{
+  color: white;
+  text-shadow: white 0px 0px 3px;
+}
+.wrapper2{
+  background: hsl(0, 0%, 100%);
+  /* background: hsl(86, 45%, 54%); */
+  /* border: 2px solid hsl(86, 45%, 54%); */
+  box-shadow: none;
+  /* box-shadow: 4px 3px 0px 1px hsl(86, 40%, 48%);   */
+}
+
+.bottom2{
+  /* font-family: Lobster; */
+  transform: translateY(-0.02em) translateX(-0.01em);; 
+
+  /* color: hsl(86, 45%, 54%); */
+  /* text-shadow: hsl(86, 45%, 54%) 0px 0px 3px; */
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
+  color: hsl(88, 100%, 97%);
+  -webkit-text-stroke: 1px hsl(86, 45%, 54%);
+  border-radius: 15px;
+}
+.top2{
+  padding-top: 10px;
+  color: white;
+  /* font-family: Lobster; */
+  /* -webkit-text-stroke: 1px hsl(86, 45%, 54%); */
+  text-shadow: hsl(86, 45%, 54%) 2px 1.5px 0px;
+  background: hsl(87, 50%, 44%);
+  padding-right: 10px;
+  padding-left: 10px;
+  border-radius: 15px;
+}
+
+
+
+.card2:nth-child(even) > .info2 > .wrapper2 > .top2 {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 100% 100%);
+
+}
+
+.card2:nth-child(even) > .info2 > .wrapper2 > .bottom2 {
+  clip-path: polygon(0% 100%, 0% 0%, 100% 100%, 0% 100%);
+
+}
+
+/* .card2:nth-child(even) > .info2 > .wrapper2 > .top2 {
+  clip-path: polygon(0% 0%, 100% 100%, 100% 100%, 0% 0%);
+}
+
+.card2:nth-child(even) > .info2 > .wrapper2 > .bottom2 {
+  clip-path: polygon(0% 0%, 100% 100%, 100% 0%, 0% 0%);
+} */
+
+/* 
+.info2 {
+  background: hsl(86, 40%, 57%);
+  color: white !important;
+}
+
+.mainContent-style2{
+  color: white !important;
+  text-shadow: 0px 0px 1px white;
+}
+
+.top2{
+  background-color: white;
+  color: hsl(86, 40%, 57%);
+  text-shadow: none;
+}
+.wrapper2{
+  background-color: hsl(86, 40%, 57%);
+}
+ */
+
+ /* .card2:hover .info2 {
+  transition: all 0.3s ease;
+  transform: translateY(-5px);
+}  */
+
+
+ /* .card2:hover .info2 {
+  animation: fillBackground 1s ease-in-out forwards;
+  color: white !important;
+  transition: all 0.3s ease;
+
+}  */
+
+/* .card2:hover .mainContent-style2{
+  color: white !important;
+  text-shadow: 0px 0px 1px white;
+  transition: all 0.3s ease;
+
+} */
+
+/* .card2:hover .mainContent-style2 > a {
+  color: white !important;
+  text-shadow: 0px 0px 1px white;
+  transition: all 0.3s ease;
+
+} */
+
+/* .card2:hover .top2{
+  background-color: white;
+  color: hsl(86, 40%, 57%);
+  text-shadow: none;
+  transition: all 0.3s ease;
+
+} */
+
+/* .card2:hover .wrapper2{
+  background-color: hsl(86, 40%, 57%);
+  transition: all 0.3s ease;
+
+} */
+
+/* .card2:hover .category-style2{
+  color: hsl(0, 0%, 100%) !important;
+  transition: all 0.3s ease;
+
+} */
+
+/* 
+@keyframes fillBackground {
+  from {
+    clip-path: circle(0% at top left);
+    background-color: transparent;
+  }
+  to {
+    clip-path: circle(150% at top left);
+    
+  }
+} */
+
+
+
+
+/* 
+.texto {
+  font-family: 'Liberty';
+  font-weight: 100;
+  font-size: 2rem;
+  letter-spacing: -0.1em;
+  flex-wrap: wrap;
+    justify-content: center;
+    word-spacing: 0.5em;
+}
+
+.letter {
+  color: hsl(87, 52%, 58%);
+  text-shadow: 0 0 2rem hsl(87, 52%, 58%);
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.letter-2 {
+  transform: translate(-0.2rem, 1rem) rotate(10deg);
+  animation: flicker 2s ease-in-out infinite alternate;
+}
+
+@keyframes flicker {
+  0% {
+      opacity: 1;
+      transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  5% {
+      opacity: 1;
+      transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  5.5% {
+      opacity: 0;
+      transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  6% {
+      opacity: 1;
+      transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  6.5% {
+      opacity: 1;
+      transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  7% {
+      opacity: 0;
+      transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  8% {
+      opacity: 1;
+      transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+  50% {
+      opacity: 1;
+      transform: translate(-0.2rem, 1rem) rotate(13deg);
+  }
+  100% {
+      opacity: 1;
+      transform: translate(-0.2rem, 1rem) rotate(10deg);
+  }
+} */
+

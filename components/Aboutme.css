@@ -221,9 +221,11 @@
   overflow: hidden;
 }
 .margin-help {
-  margin-top: 30px !important;
+  /* margin-top: 30px !important; */
+  /* background: linear-gradient(to top, black 70%, transparent 80%); */
 }
-
+.marquee-w-2{
+}
 .marquee {
   position: absolute;
   display: block;
@@ -330,13 +332,16 @@
   margin-top: -20px !important;
   height: 100%;
   text-shadow: 0.2vh 0.2vh 0.3vh hsl(87, 83%, 31%) !important;
-
+  /* text-shadow: 0.5vh 0.5vh 0.2vh hsl(87, 47%, 47%) !important; */
   font-size: 7vw;
 }
 .color-specific span {
   opacity: 1 !important;
   color: hsl(0, 0%, 100%) !important;
+  /* color: hsl(0, 0%, 0%) !important; */
   text-shadow: 0.2vh 0.2vh 0.3vh hsl(87, 89%, 28%) !important;
+  /* text-shadow: 0.5vh 0.5vh 0.2vh hsl(87, 57%, 49%) !important; */
+  /* text-shadow: 0.5vh 0.5vh 0.2vh hsl(87, 47%, 47%) !important; */
 
   font-family: "Kanit", sans-serif;
   font-weight: 400;
