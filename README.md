@@ -1,6 +1,5 @@
 # Portfolio Website - Dipen Patel
 
-```markdown
 # My Portfolio
 
 
