@@ -34,21 +34,21 @@ import Footer from "../components/footer";
 function App() {
   const scrollRef = useRef(null);
 
-  useScrollSnap({ ref: scrollRef, duration: 100, delay: 50 });
+  // useScrollSnap({ ref: scrollRef, duration: 100, delay: 50 });
 
   return (
-    <section className="scroll-container" ref={scrollRef}>
-      <div>
+    // <section className="scroll-container" ref={scrollRef}>
+      // <div>
       <Parallax />
       <Aboutme />
-      </div>
+      // </div>
       <Timeline />
-      <div>
+      // <div>
       <Socials />
       <Skills />
       <Footer />
-      </div>
-    </section>
+      // </div>
+    // </section>
   );
 }
 
