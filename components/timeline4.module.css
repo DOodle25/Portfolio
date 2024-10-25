@@ -1,396 +1,509 @@
-:root {
-    --primary-color: #212121;
-    --background-color: #111;
-    --font: sans-serif;
-    
-  
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:700,900');
+
+.timelineContainer {
+  color: rgb(255, 255, 255);
+  /* background-color: rgb(17, 17, 17); */
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  /* max-width: 1280px; */
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 2rem;
+  box-sizing: border-box;
+  box-sizing: border-box;
+  line-height: 24px;
+  /* background-color: rgb(17, 17, 17); */
+  /* font-family: Nunito; */
+  max-width: 1200px;
+}
+@media (min-width: 1700px) {
+  .timelineContainer {
+    max-width: 1400px;
   }
-  
-  /* Timeline Container */
-  .timeline {
-    display: flex;
-    justify-content: center;
-    margin: 20px auto;
-    padding: 20px;
-    padding-top: 20px;
-    margin-top: 0px;
-    padding-bottom: 20px;
-    margin-bottom: 0px;
-    /* background-color: hsl(90, 100%, 98%) !important; */
+}
+@media (min-width: 640px) {
+  .timelineContainer {
+    padding-bottom: 4rem;
   }
-  
-  /* Card container */
-  .card {
-    position: relative;
-    max-width: 1100px;
-  }
-  
-  /* setting padding based on even or odd */
-  .card:nth-child(odd) {
-    padding: 30px 0 30px 30px;
-  }
-  .card:nth-child(even) {
-    padding: 30px 30px 30px 0;
-  }
-  /* Global ::before */
-  .card::before {
-    content: "";
-    position: absolute;
-    width: 50%;
-    border: solid hsl(87, 38%, 56%);
-    border-style: dotted;
-  }
-  
-  /* Setting the border of top, bottom, left */
-  .card:nth-child(odd)::before {
-    left: 0px;
-    top: -4.5px;
-    bottom: -4.5px;
-    border-width: 5px 0 5px 5px;
-    border-radius: 50px 0 0 50px;
-  }
-  
-  /* Setting the top and bottom to "-5px" because earlier it was out of a pixel in mobile devices */
-  @media only screen and (max-width: 400px) {
-    .card:nth-child(odd)::before {
-      top: -5px;
-      bottom: -5px;
-    }
-  }
-  
-  /* Setting the border of top, bottom, right */
-  .card:nth-child(even)::before {
-    right: 0;
-    top: 0;
-    bottom: 0;
-    border-width: 5px 5px 5px 0;
-    border-radius: 0 50px 50px 0;
-  }
-  
-  /* Removing the border if it is the first card */
-  .card:first-child::before {
-    border-top: 0;
-    border-top-left-radius: 0;
-  }
-  
-  /* Removing the border if it is the last card  and it's odd */
-  .card:last-child:nth-child(odd)::before {
-    border-bottom: 0;
-    border-bottom-left-radius: 0;
-  }
-  
-  /* Removing the border if it is the last card  and it's even */
-  .card:last-child:nth-child(even)::before {
-    border-bottom: 0;
-    border-bottom-right-radius: 0;
-  }
-  
-  :root {
-    --background-color: black;
-    --text-color: hsl(0, 0%, 100%);
-  }
-  /* Title of the card */
-  .title {
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-    color: hsl(86, 45%, 54%);
-    position: relative;
-    font-size: 2em;
-    margin-top: 0;
-    margin-bottom: 0;
-    border-radius: 30px;
-  }
-  .wrapper {
-    font-size: xx-large;
-    display: grid;
-    min-height: 7vh;
-    font-family: "Oswald", sans-serif;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: var(--text-color);
-  }
-  /* text right if the card is even  */
-  .card:nth-child(even) > .info > .wrapper {
-    /* text-align: right !important; */
-    margin-right: 0;
-    margin-left: auto;
-  }
-  .card:nth-child(even) > .info > .wrapper {
-    margin-right: 0;
-    margin-left: auto;
-  }
-  
-  .card > .info > .wrapper > .top {
-    margin-left: 10px !important;
-    margin-right: 10px !important;
-    margin-top: 10px !important;
-  }
-  .card > .info > .wrapper > .bottom {
-    margin-left: 10px !important;
-    margin-right: 9px !important;
-    margin-top: 13px !important;
-  }
-  
-  .wrapper > div {
-    grid-area: 1/1/-1/-1;
-  }
-  .top {
-    text-shadow: 0vh 0vh 0.3vh hsl(0, 0%, 100%);
-    font-size: xx-large;
-    /* text-shadow: 0.2vh 0.2vh 0.3vh hsl(86, 58%, 32%); */
-    /* color: hsl(86, 58%, 32%); */
-    color: hsl(0, 0%, 100%);
-    clip-path: polygon(0% 0%, 100% 0%, 100% 28%, 0% 58%);
-  }
-  :root {
-    /* --highlight-color: hsl(86, 41%, 44%); */
-    /* --highlight-color: hsl(0, 0%, 100%); */
-    --highlight-color: hsl(86, 100%, 88%);
-  }
-  
-  .bottom {
-    text-shadow: 0vh 0vh 0.3vh hsl(86, 100%, 88%);
-    font-size: xx-large;
-    /* margin-top: 3px; */
-    clip-path: polygon(0% 60%, 100% 30%, 100% 100%, 0% 100%);
-    color: transparent;
-    background: -webkit-linear-gradient(
-      177deg,
-      var(--highlight-color) 53%,
-      var(--highlight-color) 65%
-    );
-    background: linear-gradient(
-      177deg,
-      var(--highlight-color) 53%,
-      var(--highlight-color) 65%
-    );
-    background-clip: text;
-    /* text-shadow: hsl(86, 54%, 56%) 0px 1px 4px; */
-    -webkit-background-clip: text;
-    transform: translateX(-0.02em);
-  }
-  
-  /* Timeline dot  */
-  .title::before {
-    content: "";
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background: white;
-    border-radius: 999px;
-    border: 3px solid hsl(86, 47%, 50%);
-  }
-  
-  /* text right if the card is even  */
-  .card:nth-child(even) > .info > .title {
-    text-align: right;
-  }
-  
-  /* setting dot to the left if the card is odd */
-  .card:nth-child(odd) > .info > .title::before {
-    left: -45px;
-  }
-  
-  /* setting dot to the right if the card is odd */
-  .card:nth-child(even) > .info > .title::before {
-    right: -45px;
-  }
-  
-  .card:nth-child(even) > .info > .category {
-    text-align: right;
-  }
-  
-  /* setting dot to the left if the card is odd */
-  .card:nth-child(odd) > .info > .category::before {
-    left: -45px;
-  }
-  
-  /* setting dot to the right if the card is odd */
-  .card:nth-child(even) > .info > .category::before {
-    right: -45px;
-  }
-  .card:nth-child(even) > .info > .date {
-    text-align: right;
-  }
-  
-  /* setting dot to the left if the card is odd */
-  .card:nth-child(odd) > .info > .date::before {
-    left: -45px;
-  }
-  
-  /* setting dot to the right if the card is odd */
-  .card:nth-child(even) > .info > .date::before {
-    right: -45px;
-  }
-  
-  .card:nth-child(even) > .info > .mainContent {
-    text-align: right;
-  }
-  
-  /* setting dot to the left if the card is odd */
-  .card:nth-child(odd) > .info > .mainContent::before {
-    left: -45px;
-  }
-  
-  /* setting dot to the right if the card is odd */
-  .card:nth-child(even) > .info > .mainContent::before {
-    right: -45px;
-  }
-  
-  /* .info{
-      border: black 3px solid;
-      border-radius: 30px;
-      padding: 8px;
-    } */
-  
-  /* Information about the timeline */
-  .info {
-    /* background: linear-gradient(48deg, hwb(97 76% 8%) 0%, hwb(96 96% 0%) 40%, hwb(90 98% 0%) 45%, hwb(97 76% 8%) 100%); */
-    /* background: linear-gradient(48deg, hsl(86, 45%, 54%) 0%, hsl(86, 51%, 71%) 40%, hsl(86, 54%, 70%) 45%, hsl(86, 45%, 54%) 100%); */
-    background-color: hsl(86, 36%, 68%) !important;
-    /* background-color: hsl(0, 0%, 0%) !important; */
-  
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    color: gray;
-    border-radius: 30px;
-    padding: 10px;
-    box-shadow: rgba(0, 0, 0, 0.5) 0px 2px 8px;
-    /* box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); */
-  
-    /* box-shadow: -15px -15px 15px rgba(255, 255, 255, 0.2),
-      15px 15px 15px rgba(0, 0, 0, 0.1),
-      -5px -5px 5px rgba(255, 255, 255, 0.2) inset,
-      5px 5px 5px rgba(0, 0, 0, 0.1) inset; */
-  
-      box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 90px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
-  }
-  
-  /* .card:nth-child(odd) > .info {
-      box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
-    }
-    
-    .card:nth-child(even) > .info {
-      box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
-    } */
-  
-  .date {
-    margin-top: 0px;
-    margin-right: 5px;
-    margin-left: 5px;
-    margin-bottom: 0px;
-    color: hsl(86, 45%, 54%);
-    font-size: large;
-  }
-  
-  .category {
-    margin-top: 5px;
-    margin-right: 10px;
-    margin-left: 10px;
-    margin-bottom: 0px;
-    font-size: large;
-  }
-  .date-style {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background-color: hsl(86, 43%, 38%);
-    border-radius: 10px;
-    padding-top: 0px;
-    padding-bottom: 2px;
-    padding-left: 10px;
-    padding-right: 10px;
-    color: white;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
-  }
-  .category-style {
-    color: hsl(86, 40%, 50%);
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    padding-top: 10px;
-    padding-left: 5px;
-    padding-right: 5px;
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
-  }
-  
-  .mainContent-style {
-    color: rgb(0, 0, 0);
-    text-shadow: rgba(255, 255, 255, 255) 0px 2px 8px;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    padding-top: 10px;
-    padding-left: 5px;
-    padding-right: 5px;
-  }
-  
-  .style1 {
-  }
-  .style2 {
-    text-shadow: rgba(255, 255, 255, 255) 0px 1px 4px;
-    background-color: hsl(0, 0%, 100%) !important;
-    /* background-color: hsl(90, 100%, 98%) !important; */
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
-    color: black;
-    font-weight: 500;
-    padding-right: 10px;
-    padding-left: 10px;
-    margin: 2px;
-    padding-bottom: 4px;
-    border-radius: 10px;
-  }
-  .style3 {
-  }
-  .mainContent {
-    font-weight: 400;
-    margin: 10px;
-  }
-  
-  .wrapper {
-    /* background: linear-gradient(71deg, #080509, #332f35, #2a262c, #080509); */
-    /* background: linear-gradient(71deg, hsl(0, 0%, 14%), hsl(0, 0%, 21%), hsl(0, 0%, 11%)) !important; */
-    /* background-color: hsl(90, 100%, 98%) !important; */
-    width: max-content !important;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 8px;
-    background: linear-gradient(71deg, #080509, #332f35, #2a262c, #080509);
-    margin-bottom: 10px;
-    border-radius: 15px;
-    /* background-color: hsl(86, 58%, 32%); */
-  }
-  
-  @media only screen and (max-width: 815px) {
-    .card:nth-child(even) > .info > .wrapper {
-      margin-right: 0;
-      margin-left: auto;
-    }
-    .card:nth-child(even) > .info > .wrapper {
-      margin-right: 0;
-      margin-left: auto;
-    }
-    .wrapper {
-      text-align: center !important;
-      width: 100% !important;
-    }
-    .top {
-      font-size: x-large;
-    }
-    .bottom {
-      font-size: x-large;
-    }
-  }
-  
-  .SkillHolder {
-    display: flex;
-    justify-content: left;
-    flex-wrap: wrap;
-  }
-  
-  .card:nth-child(even) .SkillHolder {
-    justify-content: right;
-  }
-  
-  
+}
 
 
-  /* @media only screen and (max-width: 415px) {
-    .card {
-        text-align: center !important;
-        width: 100% !important;
-    }
+
+.timelineItems {
+  color: rgb(255, 255, 255); /* Text color */
+  /* background-color: rgb(17, 17, 17); */
+  position: relative; /* Relative positioning */
+  margin-top: 2rem; /* Top margin */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  gap: 1rem; /* Space between items */
+  box-sizing: border-box; /* Include padding/border in total width/height */
+}
+
+@media (min-width: 640px) {
+  .timelineItems {
+    margin-top: 5rem; /* Adjust top margin for larger screens */
+    flex-direction: row; /* Change to row layout for larger screens */
+    gap: 80px; /* Increase space between items */
+  }
+}
+
+.timelineItems2 {
+  color: rgb(255, 255, 255); /* Text color */
+  /* background-color: rgb(17, 17, 17); */
+  position: relative; /* Relative positioning */
+  margin-top: 2rem; /* Top margin */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  gap: 1rem; /* Space between items */
+  box-sizing: border-box; /* Include padding/border in total width/height */
+}
+
+@media (min-width: 640px) {
+  .timelineItems2 {
+    margin-top: 5rem; /* Adjust top margin for larger screens */
+    flex-direction: row-reverse; /* Change to row layout for larger screens */
+    gap: 80px; /* Increase space between items */
+  }
+}
+
+/* Dotted: Creates a series of dots.
+
+Dashed: Creates a series of short lines.
+
+Solid: Creates a single line.
+
+Double: Creates two parallel lines.
+
+Groove: Gives a carved effect to the border.
+
+Ridge: Gives an embossed effect.
+
+Inset: Makes the element look like it is embedded in the page.
+
+Outset: Gives a popped-out effect.
+
+None: No border is displayed.
+
+Hidden: The border is not shown. */
+.verticalline {
+  color: rgb(255, 255, 255); 
+  /* background-color: hsl(87, 70%, 41%); */
+  border-right: 2px solid hsl(87, 70%, 41%);
+  border-style: dashed;
+  position: absolute; 
+  bottom: 0;
+  left: 50%;
+  top: 0; 
+  display: none;
+  /* width: 2px;  */
+  transform: translate(-50%, 0) rotate(0deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1);
+  box-sizing: border-box; 
+}
+
+@media (min-width: 640px) {
+  .verticalline {
+    display: block;
+  }
+}
+
+.dot {
+  color: rgb(255, 255, 255); /* Text color */
+  background-color: rgb(17, 17, 17); /* Background color */
+  position: absolute; /* Absolute positioning */
+  left: 50%; /* Center horizontally */
+  z-index: 10; /* Stack order */
+  display: none; /* Hidden by default */
+  height: 2.4rem; /* Height of the div */
+  width: 1.5rem; /* Width of the div */
+  transform: translate(-50%, 0) rotate(0deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1); /* Initial transformations */
+  border-radius: 9999px; /* Fully rounded */
+  transition-duration: 100ms; /* Transition duration */
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); /* Smooth transition timing */
+  box-sizing: border-box; /* Include padding/border in total width/height */
+  border: 3px solid hsl(87, 75%, 36%); /* Border color */
+}
+
+.dot:hover {
+  transform: translate(-50%, 0) rotate(0deg) skewX(0deg) skewY(0deg) scaleX(1.1) scaleY(1.1); /* Scale up on hover */
+}
+
+@media (min-width: 640px) {
+  .dot {
+    display: block; /* Show on larger screens */
+  }
+}
+
+
+.separatorLine{
+  color: rgb(255, 255, 255);
+  /* background-color: rgb(23, 136, 174);  */
+  transform: translate(0, -5px);
+  border-bottom: 2px solid hsl(87, 70%, 41%);
+  border-style: dashed;
+  position: absolute; 
+  left: 25%; 
+  right: 50%; 
+  top: 50%;
+  display: none; 
+  height: 1px; 
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  .separatorLine {
+    display: block;
+  }
+}
+.separatorLine2{
+  color: rgb(255, 255, 255);
+  border-bottom: 2px solid hsl(87, 70%, 41%);
+  border-style: dashed;
+  position: absolute; 
+  transform: translate(0, -5px);
+  left: 50%; 
+  right: 25%; 
+  top: 50%;
+  display: none; 
+  height: 1px; 
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  .separatorLine2 {
+    display: block;
+  }
+}
+
+.linkContainer {
+  color: rgb(255, 255, 255); /* Text color */
+  position: relative; /* Positioning */
+  display: flex; /* Flexbox layout */
+  width: 100%; /* Full width */
+  justify-content: center; /* Center content horizontally */
+  box-sizing: border-box; /* Include padding/border in total width */
+}
+
+@media (min-width: 640px) {
+  .linkContainer {
+    justify-content: flex-start; /* Align content to the start for larger screens */
+  }
+}
+
+
+
+
+.imageWrapper {
+  color: rgb(255, 255, 255);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  box-sizing: border-box;
+  padding-left: 0%;
+}
+
+@media (min-width: 640px) {
+  .imageWrapper {
+    justify-content: flex-start;
+    padding-left: 20%;
+  }
+}
+
+.imageWrapper2 {
+  padding-right: 0%;
+  color: rgb(255, 255, 255);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  .imageWrapper2 {
+    justify-content: flex-end;
+    padding-right: 20%;
+  }
+}
+.image2{
+  color: rgb(255, 255, 255); /* Text color (not applicable to images) */
+  position: relative; /* Relative positioning */
+  z-index: 10; /* Stacking order */
+  margin-left: auto; /* Auto margin for left to align right */
+  width: 100%; /* Full width */
+  max-width: 500px; /* Maximum width */
+  filter: drop-shadow(rgb(255, 255, 255) 0px 0px 60px); /* Drop shadow effect */
+  display: block; /* Display as block */
+  vertical-align: middle; /* Align vertically (not needed for block elements) */
+  height: auto; /* Auto height to maintain aspect ratio */
+  box-sizing: border-box; /* Include padding/border in total width/height */
+}
+.image {
+    color: rgb(255, 255, 255); /* Text color (not applicable to images) */
+    position: relative; /* Relative positioning */
+    z-index: 10; /* Stacking order */
+    margin-right: auto; /* Auto margin for right */
+    width: 100%; /* Full width */
+    max-width: 500px; /* Maximum width */
+    filter: drop-shadow(rgb(255, 255, 255) 0px 0px 60px); /* Drop shadow effect */
+    display: block; /* Display as block */
+    vertical-align: middle; /* Align vertically (not needed for block elements) */
+    height: auto; /* Auto height to maintain aspect ratio */
+    box-sizing: border-box; /* Include padding/border in total width/height */
+  
+}
+.projectLabel2 {
+  color: rgb(255, 255, 255); /* Text color */
+  background-color: hsl(87, 76%, 40%); /* Background color */
+  left: 60%; /* Position from the left (for media query) */
+  top: 1.25rem; /* Position from the top */
+  margin-top: 0.5rem; /* Margin at the top */
+  display: flex; /* Flexbox layout */
+  width: max-content; /* Width based on content */
+  align-items: center; /* Center items vertically */
+  gap: 0.25rem; /* Space between flex items */
+  border-radius: 0.25rem; /* Rounded corners */
+  padding: 0.25rem 0.5rem; /* Padding inside the span */
+  font-size: 0.875rem; /* Font size */
+  line-height: 1.25rem; /* Line height */
+  transition-duration: 200ms; /* Transition duration */
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Transition timing function */
+  box-sizing: border-box; /* Include padding/border in total width/height */
+}
+
+@media (min-width: 640px) {
+  .projectLabel2 {
+    position: absolute; /* Absolute positioning on larger screens */
+    transform: translate(-50%, 0px) rotate(0deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1); /* Transform for positioning */
+    font-size: 1rem; /* Increased font size */
+    line-height: 1.5rem; /* Increased line height */
+  }
+}
+.projectLabel {
+  color: rgb(255, 255, 255); /* Text color */
+  background-color: hsl(87, 76%, 40%); /* Background color */
+  left: 40%; /* Position from the left (for media query) */
+  top: 1.25rem; /* Position from the top */
+  margin-top: 0.5rem; /* Margin at the top */
+  display: flex; /* Flexbox layout */
+  width: max-content; /* Width based on content */
+  align-items: center; /* Center items vertically */
+  gap: 0.25rem; /* Space between flex items */
+  border-radius: 0.25rem; /* Rounded corners */
+  padding: 0.25rem 0.5rem; /* Padding inside the span */
+  font-size: 0.875rem; /* Font size */
+  line-height: 1.25rem; /* Line height */
+  transition-duration: 200ms; /* Transition duration */
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Transition timing function */
+  box-sizing: border-box; /* Include padding/border in total width/height */
+}
+@media (max-width: 640px) {
+  .projectLabel{
+    align-self: center;
+  }
+  .projectLabel2{
+    align-self: center;
+  }
+}
+@media (min-width: 640px) {
+.imageWrapper:hover .projectLabel {
+  transform: translate(-50%, -70px) rotate(0deg) skewX(0deg) skewY(0deg) scaleX(1.1) scaleY(1.1); /* Move up on hover */
+}
+}
+@media (min-width: 640px) {
+  .imageWrapper2:hover .projectLabel2 {
+    transform: translate(-50%, -70px) rotate(0deg) skewX(0deg) skewY(0deg) scaleX(1.1) scaleY(1.1); /* Move up on hover */
+  }
+  }
+@media (min-width: 640px) {
+  .projectLabel {
+    position: absolute; /* Absolute positioning on larger screens */
+    transform: translate(-50%, 0px) rotate(0deg) skewX(0deg) skewY(0deg) scaleX(1) scaleY(1); /* Transform for positioning */
+    font-size: 1rem; /* Increased font size */
+    line-height: 1.5rem; /* Increased line height */
+  }
+}
+.externalLinkIcon {
+  color: rgb(255, 255, 255); /* Color for the stroke */
+  background-color: hsl(87, 76%, 40%); /* Background color */
+  display: block; /* Block display */
+  vertical-align: middle; /* Align vertically in line with surrounding elements */
+  box-sizing: border-box; /* Include padding/border in total width/height */
+}
+
+.projectDetails {
+  padding-left: 0%;
+  color: rgb(255, 255, 255); /* Text color */
+  width: 100%; /* Full width */
+  box-sizing: border-box; /* Include padding/border in total width/height */
+}
+.projectDetails2 {
+  color: rgb(255, 255, 255); /* Text color */
+  width: 100%; /* Full width */
+  box-sizing: border-box; /* Include padding/border in total width/height */
+}
+@media (min-width: 768px) {
+  .projectDetails {
+    margin-left: 5%;
+  }
+  .projectDetails2 {
+    margin-left: 5%;
+  }
+}
+@media (min-width: 1237px) {
+  /* .projectDetails {
+    margin-right: 7%;
+  } */
+  .projectDetails2 {
+    margin-left: 10%;
+  }
+}
+.projectTitle {
+  font-size: 36px; /* Font size */
+  line-height: 2rem; /* Line height */
+  font-weight: 300; /* Font weight */
+  color: hsl(87, 85%, 5%); /* Text color */
+  margin: 0px; /* Margin */
+  box-sizing: border-box; /* Include padding/border in total width/height */
+  /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+  font-family: "Noto Serif", serif;
+}
+
+@media (min-width: 768px) {
+  .projectTitle {
+    font-size: 3.25rem; /* Font size for larger screens */
+    line-height: 3.5rem; /* Line height for larger screens */
+  }
+}
+.projectSubtitle {
+  font-size: 1rem; /* Font size */
+  line-height: 3.5rem; /* Line height */
+  color: hsl(87, 70%, 41%); /* Text color */
+  box-sizing: border-box; /* Include padding/border in total width/height */
+  /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+  font-weight: 500;
+  font-size: large;
+  font-family: "Noto Serif", serif;
+}
+
+@media (min-width: 768px) {
+  .projectSubtitle {
+    font-size: 1.125rem; /* Font size for larger screens */
+    line-height: 3.75rem; /* Line height for larger screens */
+    font-size: xx-large;
+  }
+}
+
+.projectDescription {
+  color: hsl(87, 70%, 24%); /* Text color */
+  margin: 0; /* No margin */
+  text-align: left; /* Justify text alignment */
+  font-size: 16px; /* Font size */
+  line-height: 1.25rem; /* Line height */
+  box-sizing: border-box; /* Include padding/border in total width/height */
+  /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+  font-family: "Noto Serif", serif;
+}
+
+@media (min-width: 768px) {
+  .projectDescription {
+    font-size: 1.2rem; /* Font size for larger screens */
+    line-height: 1.7rem; /* Line height for larger screens */
+    text-align: justify; /* Justify text alignment */
+    padding-right: 20%;
+  }
+}
+.projectDescription2 {
+  color: hsl(87, 70%, 24%); /* Text color */
+  margin: 0; /* No margin */
+  text-align: left; /* Justify text alignment */
+  font-size: 16px; /* Font size */
+  line-height: 1.25rem; /* Line height */
+  box-sizing: border-box; /* Include padding/border in total width/height */
+  /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+  font-family: "Noto Serif", serif;
+}
+
+@media (min-width: 768px) {
+  .projectDescription2 {
+    font-size: 1.2rem; /* Font size for larger screens */
+    line-height: 1.7rem; /* Line height for larger screens */
+    text-align: justify; /* Justify text alignment */
+    padding-right: 20%;
+  }
+}
+
+.techList {
+  margin-top: 20px;
+  color: hsl(87, 76%, 40%); /* Text color */
+  display: flex; /* Use flexbox for layout */
+  flex-wrap: wrap; /* Allow items to wrap onto multiple lines */
+  gap: 0.5rem; /* Space between items */
+  list-style: none; /* Remove default list styling */
+  box-sizing: border-box; /* Include padding/border in total width/height */
+}
+@media (min-width: 768px) {
+  .techList{
+    padding-right: 10%;
+  }
+}
+.techItem {
+  /* color: white; */
+  font-weight: bolder;
+  color: #91BE55; /* Text color */
+  /* border-radius: 50px; */
+  padding: 5px 10px; /* Padding around the text */
+  font-size: 0.875rem; /* Font size */
+  line-height: 1.25rem; /* Line height */
+  box-sizing: border-box; /* Include padding/border in total width/height */
+  border: 2px solid #91BE55; /* Border color */
+  /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+  font-family: "Noto Serif", serif;
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .techItem {
+    font-size: 1rem; /* Font size for larger screens */
+    line-height: 1.5rem; /* Line height for larger screens */
+  }
+  /* .techList{
+    padding-right: 10%;
+  } */
+}
+
+
+
+.highlightedTechItem{
+  background-color: #91BE55 !important;
+  color: white;
+}
+
+
+/* 
+.headerfont{
+  text-align: center;
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.headerfont > h1 {
+  background-color: black;
+  font-size: 40px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 20px;
+  border: 4px #6EA827;
+  border-style:groove ;
 } */
+
+.timelineContainer > *:first-child {
+  margin-top: 30px;
+}

@@ -55,7 +55,8 @@ const Footer = () => {
     <>
       <div
         className="holdering"
-        style={{ backgroundColor: "hsl(87, 48%, 51%)" }}
+                // style={{ backgroundImage: "url('/layered-steps-haikei.svg')", backgroundSize: "cover", backgroundPosition: "center" }}
+        // style={{ backgroundColor: "hsl(87, 48%, 51%)" }}
       >
         <FooterContainer sx={{ background: "transparent" }}>
           <Container maxWidth="lg">

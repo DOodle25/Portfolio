@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence&display=swap');
+
+
 :root {
   --pistachio: hsl(86, 45%, 54%);
   --platinum: hsl(0, 0%, 91%);
@@ -11,6 +14,10 @@
   --ff-inter: "Inter", sans-serif;
   --ff-roboto: "Roboto", sans-serif;
 }
+
+/* .All-About{
+  background-color: #00001C;
+} */
 .aboutme-container {
   display: flex;
   flex-wrap: wrap;
@@ -102,7 +109,22 @@
 .aboutme-info p {
   font-family: var(--ff-roboto);
   color: grey;
-  font-size: medium;
+  /* font-size: medium; */
+  font-size: 18px;
+}
+@media (max-width: 768px) {
+  .aboutme-info p {
+    font-size: 16px;
+  }
+
+  .aboutme-info h2 {
+    font-size: 26px;
+  }
+  .aboutme-info h3 {
+    font-size: 30px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
 }
 
 .socials-line {
@@ -145,7 +167,7 @@
   .aboutme-photo {
     flex: none;
     width: 60%;
-    margin-top: -30px;
+    /* margin-top: -30px; */
     margin-bottom: 0px;
   }
 
@@ -221,11 +243,9 @@
   overflow: hidden;
 }
 .margin-help {
-  /* margin-top: 30px !important; */
-  /* background: linear-gradient(to top, black 70%, transparent 80%); */
+  margin-top: 30px !important;
 }
-.marquee-w-2{
-}
+
 .marquee {
   position: absolute;
   display: block;
@@ -239,7 +259,7 @@
   opacity: 0.3;
   color: hsl(86, 45%, 54%);
   display: inline-block;
-  padding-left: 100%;
+  /* padding-left: 100%; */
   font-family: "Kanit", sans-serif;
   font-weight: 300;
   font-style: normal;
@@ -247,7 +267,8 @@
   white-space: nowrap;
   min-width: 100%;
   height: 100%;
-  font-size: 10vw;
+  /* font-size: 10vw; */
+  font-size: 80px;
   animation: marquee 30s linear infinite;
 }
 
@@ -263,7 +284,7 @@
     transform: translate(-100%, 0);
   }
 }
-
+/* 
 @media (min-width: 768px) {
   .marquee span {
     font-size: 80px;
@@ -323,7 +344,7 @@
   .marquee-w-2 {
     height: 26px;
   }
-}
+} */
 
 .marquee-2 span,
 .marquee2-2 span {
@@ -332,17 +353,14 @@
   margin-top: -20px !important;
   height: 100%;
   text-shadow: 0.2vh 0.2vh 0.3vh hsl(87, 83%, 31%) !important;
-  /* text-shadow: 0.5vh 0.5vh 0.2vh hsl(87, 47%, 47%) !important; */
-  font-size: 7vw;
+  /* font-size: 7vw; */
+  font-size: 75px;
 }
 .color-specific span {
   opacity: 1 !important;
   color: hsl(0, 0%, 100%) !important;
-  /* color: hsl(0, 0%, 0%) !important; */
+  /* color: hsl(87, 89%, 28%) !important; */
   text-shadow: 0.2vh 0.2vh 0.3vh hsl(87, 89%, 28%) !important;
-  /* text-shadow: 0.5vh 0.5vh 0.2vh hsl(87, 57%, 49%) !important; */
-  /* text-shadow: 0.5vh 0.5vh 0.2vh hsl(87, 47%, 47%) !important; */
-
   font-family: "Kanit", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -391,3 +409,132 @@
     background-position: right bottom 0;
   }
 }
+
+
+
+/* .svg-style{
+  position: fixed;
+  z-index: 10000;
+} */
+
+.svg-style {
+  /* position: fixed; */
+  position:absolute;
+  /* top: 0; */
+  width: 100%; /* Adjust the width as needed */
+}
+.svg-text{
+  position: relative;
+}
+
+
+
+
+
+/* .margin-help {
+  opacity: 0.78;
+  background: 
+    url('/s-2.svg') no-repeat center center,
+    url('/s-4.svg') no-repeat center center,
+    url('/s-5.svg') no-repeat center center;
+
+       
+  background-size: 
+    cover,
+    cover;
+} */
+
+/* 
+.margin-help {
+  position: relative;
+  opacity: 0.90;
+}
+
+.margin-help::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 73%;
+  
+  background: 
+    url('/s-2.svg') no-repeat center center,
+    url('/s-4.svg') no-repeat center center,
+    url('/s-5.svg') no-repeat center center;
+  
+  background-size: cover;
+  opacity: inherit;
+  z-index: -1;
+}
+
+
+@media (max-width: 480px) {
+  .margin-help::before {
+    height: 100%;
+  }
+} */
+
+
+
+
+
+
+
+.margin-help {
+  position: relative;
+  opacity: 0.86;
+}
+
+.margin-help::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 73%;
+  
+  /* background-color: #5b7e2e; */
+  
+  background-size: cover;
+  opacity: inherit;
+  z-index: -1;
+}
+
+
+@media (max-width: 480px) {
+  .margin-help::before {
+    height: 100%;
+  }
+}
+
+@keyframes marqueerev {
+  0% {
+    transform: translate(-100%, 0);
+  }
+  100% {
+    transform: translate(0%, 0);
+  }
+}
+.reverse span {
+  /* padding-right: 100% !important; */
+  padding-left: 100% !important;
+  padding-right: 0% !important;
+  animation: marqueerev 30s linear infinite !important;
+}
+
+.reverse2 span{
+  padding-left: 100% !important;
+  padding-right: 0% !important;
+  animation: marqueerev 30s linear infinite !important;
+  animation-delay: 15s !important;
+}
+
+
+
+/* .marquee-w-2{
+  margin-top: -50px !important;
+} */
+/* .color-specific{
+  opacity: 0.5;
+} */

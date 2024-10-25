@@ -1,9 +1,26 @@
 html,
 body {
-  /* background-color: hsl(86, 45%, 54%) !important; */
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
-  height: auto; /* Ensure full height */
-  overflow-x: hidden; /* Prevent horizontal overflow */
-  /* overflow-y: hidden; Prevent vertical overflow */
+  margin: 0;
+  padding: 0;
+  height: auto;
+  overflow-x: hidden;
 }
+
+
+
+
+
+.scroll-container {
+  display: flex;
+  flex-direction: column;
+  scroll-snap-type: y mandatory;
+  overflow-y: auto;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.scroll-container > * {
+  scroll-snap-align: start;
+  flex: 0 0 100vh;
+}
+

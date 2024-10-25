@@ -57,7 +57,7 @@ const Socials = () => {
     if (!autoCycle) return;
 
     const cards = [
-      "overview",
+      // "overview",
       "github",
       "linkedin",
       "leetcode",
@@ -101,7 +101,7 @@ const Socials = () => {
   const isWhiteIcon = ["github", "leetcode"].includes(activeCard);
 
   return (
-    <div className="cards">
+    <div className="cards" style={{ marginTop: "15px" }}>
       <div
         className="contact"
         onClick={handleContactClick}
@@ -145,64 +145,68 @@ const Socials = () => {
           </div>
         </form>
       </div>
-      {["overview", "github", "linkedin", "leetcode", "PersonalWebsite"].map(
-        (card) => (
-          <div
-            key={card}
-            className={`card ${activeCard === card ? "active" : ""}`}
-            id={card}
+      {[
+        // "overview",
+        "github",
+        "linkedin",
+        "leetcode",
+        "PersonalWebsite",
+      ].map((card) => (
+        <div
+          key={card}
+          className={`card ${activeCard === card ? "active" : ""}`}
+          id={card}
+        >
+          <a
+            className="card-toggle"
+            onClick={() => handleCardToggle(card)}
+            role="button"
+            tabIndex="0"
           >
-            <a
-              className="card-toggle"
-              onClick={() => handleCardToggle(card)}
-              role="button"
-              tabIndex="0"
-            >
-              {card === "overview" && (
-                <FaArrowCircleLeft
-                  className={`icon ${isWhiteIcon ? "white" : "black"}`}
-                />
-              )}
-              {card === "github" && (
-                <FaGithub className={`icon ${isWhiteIcon ? "white" : ""}`} />
-              )}
-              {card === "linkedin" && (
-                <FaLinkedin className={`icon ${isWhiteIcon ? "white" : ""}`} />
-              )}
-              {card === "leetcode" && (
-                <FaCode className={`icon ${isWhiteIcon ? "white" : ""}`} />
-              )}
-              {card === "PersonalWebsite" && (
-                <FaTerminal className={`icon ${isWhiteIcon ? "white" : ""}`} />
-              )}
-            </a>
-            <div className="card-content">
-              <div className="row">
-                <div className="left col">
-                  <h2>
-                    My{" "}
-                    <strong>
-                      {card === "PersonalWebsite"
-                        ? "Website"
-                        : card.charAt(0).toUpperCase() + card.slice(1)}
-                    </strong>
-                  </h2>
-                  <p>{description}</p>
-                  <br />
-                  <a
-                    href={linkUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="link-section"
-                  >
-                    {linkText}
-                  </a>
-                </div>
+            {card === "overview" && (
+              <FaArrowCircleLeft
+                className={`icon ${isWhiteIcon ? "white" : "black"}`}
+              />
+            )}
+            {card === "github" && (
+              <FaGithub className={`icon ${isWhiteIcon ? "white" : ""}`} />
+            )}
+            {card === "linkedin" && (
+              <FaLinkedin className={`icon ${isWhiteIcon ? "white" : ""}`} />
+            )}
+            {card === "leetcode" && (
+              <FaCode className={`icon ${isWhiteIcon ? "white" : ""}`} />
+            )}
+            {card === "PersonalWebsite" && (
+              <FaTerminal className={`icon ${isWhiteIcon ? "white" : ""}`} />
+            )}
+          </a>
+          <div className="card-content">
+            <div className="row">
+              <div className="left col">
+                <h2>
+                  My{" "}
+                  <strong>
+                    {card === "PersonalWebsite"
+                      ? "Website"
+                      : card.charAt(0).toUpperCase() + card.slice(1)}
+                  </strong>
+                </h2>
+                <p>{description}</p>
+                <br />
+                <a
+                  href={linkUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="link-section"
+                >
+                  {linkText}
+                </a>
               </div>
             </div>
           </div>
-        )
-      )}
+        </div>
+      ))}
     </div>
   );
 };
