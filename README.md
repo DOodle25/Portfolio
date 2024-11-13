@@ -1,3 +1,9 @@
+![GitHub](https://img.shields.io/github/repo-size/DOodle25/Portfolio?style=plastic) 
+![GitHub](https://img.shields.io/github/last-commit/DOodle25/Portfolio?style=plastic) 
+![GitHub](https://img.shields.io/github/languages/top/DOodle25/Portfolio?style=plastic) 
+![GitHub](https://img.shields.io/github/license/DOodle25/Portfolio?style=plastic) 
+![GitHub](https://img.shields.io/github/followers/DOodle25?style=social)
+
 # Portfolio Website - Dipen Patel
 **Live Version Azure:** [azure-portfolio.alynor.wiki](https://azure-portfolio.alynor.wiki/)
 # My Portfolio
