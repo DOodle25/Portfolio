@@ -13,10 +13,7 @@
 ![GitHub](https://img.shields.io/github/contributors/DOodle25/Portfolio?style=plastic) 
 ![GitHub](https://img.shields.io/github/downloads/DOodle25/Portfolio/total?style=plastic) 
 ![GitHub](https://img.shields.io/github/release/DOodle25/Portfolio?style=plastic) 
-![GitHub](https://img.shields.io/github/languages/all/DOodle25/Portfolio?style=plastic) 
 ![GitHub](https://img.shields.io/github/issues-closed/DOodle25/Portfolio?style=plastic) 
-![GitHub](https://img.shields.io/github/pull-requests-closed/DOodle25/Portfolio?style=plastic) 
-![GitHub](https://img.shields.io/github/size/DOodle25/Portfolio?style=plastic) 
 ![GitHub](https://img.shields.io/github/languages/code-size/DOodle25/Portfolio?style=plastic) 
 
 # My Portfolio
