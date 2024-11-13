@@ -1,4 +1,4 @@
-# Portfolio Website - Dipen Patel (live - dipen.alynor.wiki)
+# Portfolio Website - Dipen Patel
 **Live Version Azure:** [azure-portfolio.alynor.wiki](https://azure-portfolio.alynor.wiki/)
 # My Portfolio
 
