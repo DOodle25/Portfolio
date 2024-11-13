@@ -1,11 +1,12 @@
 # Portfolio Website - Dipen Patel
 **Live Version Azure:** [azure-portfolio.alynor.wiki](https://azure-portfolio.alynor.wiki/)
 
+![GitHub](https://img.shields.io/github/repo-size/DOodle25/Portfolio?style=plastic) 
+![GitHub](https://img.shields.io/github/languages/code-size/DOodle25/Portfolio?style=plastic) 
+![GitHub](https://img.shields.io/github/license/DOodle25/Portfolio?style=plastic) 
+![GitHub](https://img.shields.io/github/last-commit/DOodle25/Portfolio?style=plastic) 
 ![GitHub](https://img.shields.io/github/stars/DOodle25/Portfolio?style=plastic) 
 ![GitHub](https://img.shields.io/github/forks/DOodle25/Portfolio?style=plastic) 
-![GitHub](https://img.shields.io/github/license/DOodle25/Portfolio?style=plastic) 
-![GitHub](https://img.shields.io/github/repo-size/DOodle25/Portfolio?style=plastic) 
-![GitHub](https://img.shields.io/github/last-commit/DOodle25/Portfolio?style=plastic) 
 ![GitHub](https://img.shields.io/github/issues/DOodle25/Portfolio?style=plastic) 
 ![GitHub](https://img.shields.io/github/issues-pr/DOodle25/Portfolio?style=plastic) 
 ![GitHub](https://img.shields.io/github/commit-activity/m/DOodle25/Portfolio?style=plastic) 
@@ -14,7 +15,6 @@
 ![GitHub](https://img.shields.io/github/downloads/DOodle25/Portfolio/total?style=plastic) 
 ![GitHub](https://img.shields.io/github/release/DOodle25/Portfolio?style=plastic) 
 ![GitHub](https://img.shields.io/github/issues-closed/DOodle25/Portfolio?style=plastic) 
-![GitHub](https://img.shields.io/github/languages/code-size/DOodle25/Portfolio?style=plastic) 
 
 # My Portfolio
 
