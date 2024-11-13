@@ -18,7 +18,6 @@
 ![GitHub](https://img.shields.io/github/pull-requests-closed/DOodle25/Portfolio?style=plastic) 
 ![GitHub](https://img.shields.io/github/size/DOodle25/Portfolio?style=plastic) 
 ![GitHub](https://img.shields.io/github/languages/code-size/DOodle25/Portfolio?style=plastic) 
-![GitHub](https://img.shields.io/github/commit-activity?style=plastic)
 
 # My Portfolio
 
