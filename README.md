@@ -80,4 +80,5 @@ To deploy your portfolio, build the optimized production version and host it on 
 
 ## License
 
-This project is licensed under the MIT License.
+[This project is licensed under the MIT License.
+](https://github.com/DOodle25/Portfolio/tree/main?tab=CC0-1.0-1-ov-file)
