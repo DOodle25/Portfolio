@@ -61,17 +61,19 @@
   }
     @media (min-width: 1024px) {
         .inf-scrl__scroll div span {
-                    margin: 30px;
+                    margin-right: 30px;
+                    margin-left: 30px;
     }
     }
   .inf-scrl__scroll div span:hover {
     /* background: hsl(86, 45%, 54%); */
     /* color: white; */
-    transform: translate(0, -15px) scale(1.1);
+    transform: translate(0, -5px) scale(1.1);
     cursor: pointer;
   }
   
   .skill-icon {
+    opacity: 0.3;
     width: 80px;
     height: 80px;
     margin: 10px;
@@ -81,6 +83,7 @@
   
   /* Hover effect with HSL color */
   .skill-icon:hover {
+    opacity: 0.4;
     color: hsl(86, 45%, 54%);
   }
   
@@ -112,3 +115,10 @@
 .holdering {
   background-color: hsl(86, 45%, 54%);
 }
+
+
+
+
+/* glitch effect */
+
+

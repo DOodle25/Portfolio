@@ -1,0 +1,43 @@
+#site-content {
+    /* min-height: 100%; */
+    min-height: 0vh;
+    /* padding-top: 65px; */
+    position: relative;
+    z-index: 1;
+/*   
+    -webkit-box-shadow: #000 0 7px 35px 0;
+    -moz-box-shadow: #000 0 7px 35px 0;
+    box-shadow: #000 0 7px 35px 0; */
+  }
+  
+  #site-footer {
+    padding: 25px 0;
+    font-size: 85%;
+    background-color: #2A2A2A;
+    position: fixed;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  
+  /* html, body {
+    padding: 0;
+    margin: 0;
+    background-color: #D1D1D1;
+  } */
+  
+  /* #site-content {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('http://dummyimage.com/3000x3000/D1D1D1/2A2A2A.png?text=Scroll+Down');
+  } */
+  
+  #site-footer {
+    min-height: 25vw;
+    background-size: cover;
+    background-position: center;
+    background-image: url('http://dummyimage.com/1500x1500/2A2A2A/FFF.png?text=Footer+Area+(Resize+Me)');
+  }
+  

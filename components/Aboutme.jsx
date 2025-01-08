@@ -53,8 +53,7 @@ const Aboutme = () => {
             <h1>A glimpse into my world</h1>
           </div>
           <div className="aboutme-info">
-            <h2>Let me introduce Myself</h2>
-            <h3>Dipen Patel</h3>
+            <h2>Let me introduce myself</h2>
             <div className="aboutme-roles">
               {roles.map((role, index) => (
                 <div
@@ -76,14 +75,14 @@ const Aboutme = () => {
           <hr className="socials-line" />
           <div className="aboutme-socials">
             <a
-              href="https://www.linkedin.com/in/dipenpatel/"
+              href="https://www.linkedin.com/in/dipen-patel-792296260/"
               target="_blank"
               rel="noreferrer"
             >
               <FaLinkedin size={35} />
             </a>
             <a
-              href="https://github.com/your-username"
+              href="https://github.com/DOodle25"
               target="_blank"
               rel="noreferrer"
             >

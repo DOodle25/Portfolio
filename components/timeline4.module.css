@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Roboto:700,900');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap');
 
 .timelineContainer {
   color: rgb(255, 255, 255);
@@ -367,18 +368,21 @@ Hidden: The border is not shown. */
 }
 .projectTitle {
   font-size: 36px; /* Font size */
-  line-height: 2rem; /* Line height */
-  font-weight: 300; /* Font weight */
+  line-height: 2.5rem; /* Line height */
+  font-weight: 400; /* Font weight */
   color: hsl(87, 85%, 5%); /* Text color */
   margin: 0px; /* Margin */
   box-sizing: border-box; /* Include padding/border in total width/height */
   /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
-  font-family: "Noto Serif", serif;
+  /* font-family: "Noto Serif", serif; */
+  font-family: 'Roboto', sans-serif; /* Highly readable for body text */
+
 }
 
 @media (min-width: 768px) {
   .projectTitle {
-    font-size: 3.25rem; /* Font size for larger screens */
+    /* font-size: 3.25rem; Font size for larger screens */
+    font-size: 2.95rem; /* Font size for larger screens */
     line-height: 3.5rem; /* Line height for larger screens */
   }
 }
@@ -390,7 +394,8 @@ Hidden: The border is not shown. */
   /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
   font-weight: 500;
   font-size: large;
-  font-family: "Noto Serif", serif;
+  /* font-family: "Noto Serif", serif; */
+  font-family: 'Roboto', sans-serif; /* Highly readable for body text */
 }
 
 @media (min-width: 768px) {
@@ -409,7 +414,8 @@ Hidden: The border is not shown. */
   line-height: 1.25rem; /* Line height */
   box-sizing: border-box; /* Include padding/border in total width/height */
   /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
-  font-family: "Noto Serif", serif;
+  /* font-family: "Noto Serif", serif; */
+  font-family: 'Roboto', sans-serif; /* Highly readable for body text */
 }
 
 @media (min-width: 768px) {
@@ -428,7 +434,8 @@ Hidden: The border is not shown. */
   line-height: 1.25rem; /* Line height */
   box-sizing: border-box; /* Include padding/border in total width/height */
   /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
-  font-family: "Noto Serif", serif;
+  /* font-family: "Noto Serif", serif; */
+  font-family: 'Roboto', sans-serif; /* Highly readable for body text */
 }
 
 @media (min-width: 768px) {
@@ -467,6 +474,7 @@ Hidden: The border is not shown. */
   /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
   font-family: "Noto Serif", serif;
   font-weight: 700;
+  font-family: 'Roboto', sans-serif; /* Highly readable for body text */
 }
 
 @media (min-width: 768px) {

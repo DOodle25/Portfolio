@@ -49,7 +49,7 @@ const socialData = {
 
 const Socials = () => {
   const [activeCard, setActiveCard] = useState("overview");
-  const [formActive, setFormActive] = useState(false);
+  // const [formActive, setFormActive] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
   const [autoCycle, setAutoCycle] = useState(true);
 
@@ -65,9 +65,10 @@ const Socials = () => {
     ];
     const intervalId = setInterval(() => {
       setActiveCard((prevCard) => {
-        const currentIndex = cards.indexOf(prevCard);
-        const nextIndex = (currentIndex + 1) % cards.length;
-        return cards[nextIndex];
+      const currentIndex = cards.indexOf(prevCard);
+      const nextIndex = (currentIndex + 1) % cards.length;
+      setSelectedTab(nextIndex + 1); // Update the selected tab
+      return cards[nextIndex];
       });
     }, 1800);
 
@@ -80,6 +81,9 @@ const Socials = () => {
       setIsAnimating(true);
       setActiveCard(id);
       setAutoCycle(false);
+      const cardKeys = ["github", "linkedin", "leetcode", "PersonalWebsite"];
+      const tabIndex = cardKeys.indexOf(id) + 1;
+      setSelectedTab(tabIndex); // Update the selected tab
       setTimeout(() => {
         setIsAnimating(false);
       }, 300);
@@ -87,22 +91,63 @@ const Socials = () => {
     [isAnimating]
   );
 
-  const handleContactToggle = useCallback(() => {
-    setFormActive((prevFormActive) => !prevFormActive);
-  }, []);
+  // const handleContactToggle = useCallback(() => {
+  //   setFormActive((prevFormActive) => !prevFormActive);
+  // }, []);
 
-  const handleContactClick = () => {
-    const link = socialData[activeCard].link || "#";
-    window.open(link, "_blank");
-  };
+  // const handleContactClick = () => {
+  //   const link = socialData[activeCard].link || "#";
+  //   window.open(link, "_blank");
+  // };
 
   const { description, linkText, linkUrl } = socialData[activeCard];
 
   const isWhiteIcon = ["github", "leetcode"].includes(activeCard);
 
+
+
+  const [selectedTab, setSelectedTab] = useState(1);
+  const handleTabClick = (id) => {
+    setSelectedTab(id); // Set active tab
+    const cardKeys = ["github", "linkedin", "leetcode", "PersonalWebsite"];
+    const cardKey = cardKeys[id - 1]; // Match tab ID to card key
+    handleCardToggle(cardKey); // Update active card based on tab
+  };
   return (
+    <>
+    <div className="cards cards2" style={{height: "30px", paddingTop:"0", paddingBottom:"0", backgroundColor: "white", color: "white"}}>
+      <div style={{ display: "flex", alignItems: "left", padding: "", borderRadius: "5px", marginRight: "10px" }} className="tabss">
+        {[
+          { id: 1, name: "GitHub", className: "tab tab1 hide-on-small-screen-1" },
+          { id: 2, name: "LinkedIn", className: "tab tab2 hide-on-small-screen-2" },
+          { id: 3, name: "Leetcode", className: "tab tab3 hide-on-small-screen" },
+          { id: 4, name: "MyWeb", className: "tab tab4 hide-on-small-screen" },
+        ].map((tab) => (
+          <div
+            key={tab.id}
+            className={`${tab.className} ${selectedTab === tab.id ? "selected" : ""}`} // Add selected class
+            style={{
+              display: "flex",
+              alignItems: "center",
+              padding: "5px 10px",
+              marginRight: "2px",
+              cursor: "pointer", // Make it clickable
+            }}
+            onClick={() => handleTabClick(tab.id)} // Handle tab click
+          >
+            <span style={{ marginRight: "10px" }}>{tab.name}</span>
+            <FaTimes style={{ cursor: "pointer", fontWeight: "10" }} />
+          </div>
+        ))}
+      </div>
+      <div className="browser-buttons">
+        <div className="browser-button close"></div>
+        <div className="browser-button minimize"></div>
+        <div className="browser-button maximize"></div>
+      </div>
+    </div>
     <div className="cards" style={{ marginTop: "15px" }}>
-      <div
+      {/* <div
         className="contact"
         onClick={handleContactClick}
         role="button"
@@ -144,7 +189,7 @@ const Socials = () => {
             <input type="submit" value="Send" />
           </div>
         </form>
-      </div>
+      </div> */}
       {[
         // "overview",
         "github",
@@ -208,6 +253,7 @@ const Socials = () => {
         </div>
       ))}
     </div>
+    </>
   );
 };
 

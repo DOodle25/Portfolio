@@ -1,0 +1,200 @@
+/* body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  .footer-main {
+    flex: 1;
+  } */
+  
+  .footer-container {
+    position: relative;
+    background-color: rgba(1, 1, 2, 0.91);
+    min-height: 100px;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    flex-direction: column;
+  }
+  
+  .footer-container .footer-social-icon,
+  .footer-container .footer-menu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 0;
+    flex-wrap: wrap;
+  }
+  
+  .footer-container .footer-social-icon li,
+  .footer-container .footer-menu li {
+    list-style: none;
+  }
+  
+  .footer-container .footer-social-icon li a {
+    font-size: 2em;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+    text-decoration: none;
+  }
+  
+  .footer-container .footer-social-icon li a:hover {
+    transform: translateY(-10px);
+  }
+  
+  .footer-container .footer-menu li a {
+    font-size: 1.2em;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+    text-decoration: none;
+    opacity: 0.75;
+  }
+  
+  .footer-container .footer-menu li a:hover {
+    opacity: 1;
+  }
+  
+  .footer-container p {
+    color: #fff;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 1em;
+    opacity: 0.7;
+  }
+  
+  .footer-container .footer-wave {
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: url('wave.png');
+    background-size: 1000px 50px;
+    filter: brightness(0);
+    opacity: 0.5;
+  }
+  
+  .footer-container .footer-wave#footer-wave1 {
+    opacity: 0.91;
+    bottom: 0;
+    animation: animateWave 4s linear infinite;
+  }
+  
+  @media (max-width: 900px) {
+    .footer-container .footer-wave {
+      background-size: 500px 50px;
+    }
+  }
+/* :root {
+    --color1: #1C344D;
+    --color2: #91C46C;
+    --color3: #287D7D;
+    --color4: #C6E070;
+    --background-color: #F2ECD3;
+} */
+:root {
+    --color1: #91BE55;
+    --color2: #91BE55;
+    --color3: #91BE55;
+    --color4: #91BE55;
+    --background-color: white;
+}
+.footer-container {
+    background: 
+        linear-gradient(to left bottom,
+            rgba(255, 255, 255, 0) 0.4em,
+            var(--color1) 0.4em, var(--color1) 1.02em, 
+            rgba(255, 255, 255, 0) 1.02em
+        ) 0 0,
+        linear-gradient(to right top,
+            rgba(255, 255, 255, 0) 0.4em,
+            var(--color1) 0.4em, var(--color1) 1.02em, 
+            rgba(255, 255, 255, 0) 1.02em
+        ) 2em 0,
+        linear-gradient(to left bottom,
+            rgba(255, 255, 255, 0) 0.4em,
+            var(--color2) 0.4em, var(--color2) 1.02em, 
+            rgba(255, 255, 255, 0) 0.4em
+        ) 0 1.02em,
+        linear-gradient(to right top,
+            rgba(255, 255, 255, 0) 0.4em,
+            var(--color2) 0.4em, var(--color2) 1.02em, 
+            rgba(255, 255, 255, 0) 0.4em
+        ) 2em 1.02em,
+        linear-gradient(to left bottom,
+            rgba(255, 255, 255, 0) 0.4em,
+            var(--color3) 0.4em, var(--color3) 1.02em, 
+            rgba(255, 255, 255, 0) 0.4em
+        ) 0 2.04em,
+        linear-gradient(to right top,
+            rgba(255, 255, 255, 0) 0.4em,
+            var(--color3) 0.4em, var(--color3) 1.02em, 
+            rgba(255, 255, 255, 0) 0.4em
+        ) 2em 2.04em,
+        linear-gradient(to left bottom,
+            rgba(255, 255, 255, 0) 0.4em,
+            var(--color4) 0.4em, var(--color4) 1.02em, 
+            rgba(255, 255, 255, 0) 0.4em
+        ) 0 3.06em,
+        linear-gradient(to right top,
+            rgba(255, 255, 255, 0) 0.4em,
+            var(--color4) 0.4em, var(--color4) 1.02em, 
+            rgba(255, 255, 255, 0) 0.4em
+        ) 2em 3.06em,
+        linear-gradient(to right bottom,
+            rgba(255, 255, 255, 0) 0.4em,
+            var(--color4) 0.4em, var(--color4) 1.02em, 
+            rgba(255, 255, 255, 0) 1.02em
+        ) 0 0,
+        linear-gradient(to left top,
+            rgba(255, 255, 255, 0) 0.4em,
+            var(--color4) 0.4em, var(--color4) 1.02em, 
+            rgba(255, 255, 255, 0) 1.02em
+        ) 2em 0,
+        linear-gradient(to right bottom,
+            rgba(255, 255, 255, 0) 0.4em,
+            var(--color1) 0.4em, var(--color1) 1.02em, 
+            rgba(255, 255, 255, 0) 0.4em
+        ) 0 1.02em,
+        linear-gradient(to left top,
+            rgba(255, 255, 255, 0) 0.4em,
+            var(--color1) 0.4em, var(--color1) 1.02em, 
+            rgba(255, 255, 255, 0) 0.4em
+        ) 2em 1.02em,
+        linear-gradient(to right bottom,
+            rgba(255, 255, 255, 0) 0.4em,
+            var(--color2) 0.4em, var(--color2) 1.02em, 
+            rgba(255, 255, 255, 0) 0.4em
+        ) 0 2.04em,
+        linear-gradient(to left top,
+            rgba(255, 255, 255, 0) 0.4em,
+            var(--color2) 0.4em, var(--color2) 1.02em, 
+            rgba(255, 255, 255, 0) 0.4em
+        ) 2em 2.04em,
+        linear-gradient(to right bottom,
+            rgba(255, 255, 255, 0) 0.4em,
+            var(--color3) 0.4em, var(--color3) 1.02em, 
+            rgba(255, 255, 255, 0) 0.4em
+        ) 0 3.06em,
+        linear-gradient(to left top,
+            rgba(255, 255, 255, 0) 0.4em,
+            var(--color3) 0.4em, var(--color3) 1.02em, 
+            rgba(255, 255, 255, 0) 0.4em
+        ) 2em 3.06em;
+
+    background-size: 4em 4em;
+    background-color: var(--background-color);
+    background-repeat: repeat;
+    font: 16px/2 'Trebuchet MS', Verdana, sans-serif;
+}

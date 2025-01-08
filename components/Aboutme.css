@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Rubik+Glitch&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Rubik+Glitch&family=Rubik+Glitch+Pop&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Rubik+Glitch&family=Rubik+Glitch+Pop&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap');
 
 
 :root {
@@ -61,27 +65,60 @@
   font-size: 1.1rem;
   font-family: var(--ff-oswald);
   color: var(--pistachio);
-  text-shadow: 2px 2px 5px rgb(219, 219, 219) !important;
+  /* text-shadow: 2px 2px 5px rgb(219, 219, 219) !important; */
+  font-family: 'Roboto', sans-serif; /* Highly readable for body text */
 }
 
 .aboutme-info h2 {
   font-family: var(--ff-inter);
   color: var(--black);
+  /* color: rgb(88, 88, 88); */
   margin-top: 0;
   font-size: 2rem;
   font-weight: 100;
   margin-bottom: 0;
-  text-shadow: 2px 2px 5px rgb(174, 174, 174) !important;
+  /* text-shadow: 1px 1px 3px rgb(174, 174, 174) !important; */
+  /* font-style: italic; */
+  font-family: 'Roboto', sans-serif; /* Highly readable for body text */
 }
 
 .aboutme-info h3 {
   font-family: var(--ff-inter);
   color: black;
   font-size: 2.5rem;
+  font-size: 2.9rem;
   font-weight: bold;
-  margin-top: 10px;
+  /* margin-top: 10px; */
   margin-bottom: 15px;
-  text-shadow: 2px 2px 5px rgb(173, 173, 173) !important;
+  /* text-shadow: 1px 1px 2px rgb(173, 173, 173) !important; */
+  /* font-family: "Fredericka the Great", serif;
+  font-weight: 500;
+  font-style: normal; */
+  /* font-weight: 500; */
+  /* color: rgb(212, 212, 212); */
+  /* color: rgb(57, 57, 57); */
+  /* -webkit-text-stroke: 1.4px var(--pistachio); */
+  /* text-shadow: none; */
+  /* text-shadow: 2px 2px 0px #6b9732 !important; */
+  /* text-shadow: 2px 2px 0px #6b9732, 4px 4px 0px #4e7e2e, 6px 6px 0px #2e5e1e; */
+  /* text-shadow: 1px 1px 0px #ffffff, 1.5px 1.5px 0px grey, -1px -1px 0px #ffffff, -1.5px -1.5px 0px grey; */
+
+  /* font-family: "Fredericka the Great", serif; */
+  font-family: 'Roboto', sans-serif; /* Highly readable for body text */
+  font-weight:lighter;
+  color: white;
+  /* background-color: hsl(86, 45%, 54%); */
+}
+.h3style{
+  background-color: hsl(86, 45%, 54%);
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 30px;
+}
+@media (max-width: 768px) {
+  .aboutme-info h3 {
+    /* -webkit-text-stroke: 1.0px var(--pistachio); */
+  }
 }
 
 .aboutme-roles {
@@ -101,26 +138,37 @@
   transition: all 0.3s ease;
   border: 2px solid var(--pistachio);
 }
-
+@media (max-width: 768px) {
+  .aboutme-header{
+    justify-content: center;
+  }
+  .aboutme-header > h1{
+    font-size: 10px;
+  }
+  .aboutme-roles{
+    justify-content: center;
+  }
+  .role {
+    font-size: 15px;
+  }
+}
 .role.active {
   background-color: var(--pistachio);
   color: white;
 }
-.aboutme-info p {
-  font-family: var(--ff-roboto);
-  color: grey;
-  /* font-size: medium; */
-  font-size: 18px;
-}
+
 @media (max-width: 768px) {
   .aboutme-info p {
+    text-align: center;
     font-size: 16px;
   }
 
   .aboutme-info h2 {
+    text-align: center;
     font-size: 26px;
   }
   .aboutme-info h3 {
+    text-align: center;
     font-size: 30px;
     margin-top: 2px;
     margin-bottom: 2px;
@@ -167,9 +215,10 @@
   .aboutme-photo {
     flex: none;
     width: 60%;
-    /* margin-top: -30px; */
+    min-width: 230px;
+    /* margi-top: -30px; */
     margin-bottom: 0px;
-  }
+  } 
 
   .aboutme-content {
     margin-right: 0px !important;
@@ -538,3 +587,31 @@
 /* .color-specific{
   opacity: 0.5;
 } */
+
+
+.aboutme-info p {
+  font-family: var(--ff-roboto);
+  color: rgb(80, 80, 80);
+  font-size: medium;
+  font-size: 18px;
+  font-weight: 100;
+  opacity: 0.7;
+  line-height: 1.3;
+  margin-top: 20px;
+}
+@media (max-width: 768px) {
+  .aboutme-info p {
+    text-align: center;
+    font-size: 14px !important;
+  }
+  .aboutme-socials {
+    flex-wrap: wrap;
+    overflow: hidden;
+    display: flex;
+    gap: 18px;
+    justify-content: center;}
+}
+
+
+
+
