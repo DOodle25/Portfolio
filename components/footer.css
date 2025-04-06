@@ -1,4 +1,4 @@
-.object0 {
+/* .object0 {
   opacity: 0.8;
   display: flex;
   justify-content: center;
@@ -32,4 +32,148 @@
 }
 .shwt {
   text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+} */
+
+/* 
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.video-bubble-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.video-bubble-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.5s ease;
+}
+.video-bubble-exit {
+  opacity: 1;
+}
+.video-bubble-exit-active {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+
+.MuiIconButton-root:hover {
+  animation: float 2s ease-in-out infinite;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+@media (max-width: 900px) {
+  .video-gallery iframe {
+    width: 100%;
+    height: 250px;
+  }
+}
+
+.footer-gradient-border {
+  position: relative;
+}
+.footer-gradient-border::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+} */
+
+
+
+/* Floating animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Video bubble specific styles */
+.video-bubble-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.video-bubble-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.5s ease;
+}
+.video-bubble-exit {
+  opacity: 1;
+}
+.video-bubble-exit-active {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+
+/* Hover effects */
+.MuiIconButton-root:hover {
+  animation: float 2s ease-in-out infinite;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .video-gallery iframe {
+    width: 100%;
+    height: 250px;
+  }
+}
+
+/* Gradient border for footer */
+.footer-gradient-border {
+  position: relative;
+}
+.footer-gradient-border::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #97B931 0%, hsl(86, 43%, 38%) 100%);
+}
+
+/* Video controls */
+.video-controls {
+  transition: all 0.3s ease;
+}
+.video-controls:hover {
+  opacity: 1 !important;
+}
+
+/* Video label animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.video-label {
+  animation: pulse 2s infinite;
 }
