@@ -1613,6 +1613,255 @@
 
 
 
+// import React, { useEffect, useState, useRef } from "react";
+// import "./parallax.css";
+// import { gsap } from "gsap";
+// import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+// gsap.registerPlugin(ScrollTrigger);
+
+// const Parallax = () => {
+//   const [finalWelcome, setFinalWelcome] = useState(false);
+//   const [loadedImages, setLoadedImages] = useState(0);
+//   const [totalImages, setTotalImages] = useState(0);
+//   const [readyToExit, setReadyToExit] = useState(false);
+//   const [minimumTimePassed, setMinimumTimePassed] = useState(false);
+//   const preloaderRef = useRef(null);
+//   const maskRef = useRef(null);
+//   const contentRef = useRef(null);
+//   const welcomeTextRef = useRef(null);
+//   const loadingBarRef = useRef(null);
+//   const object4Ref = useRef(null);
+  
+//   const imageUrls = [
+//     "s-0.svg",
+//     "s-1.svg",
+//     "s-2.svg",
+//     "name.svg",
+//     "s-4.svg",
+//     "s-5.svg"
+//   ];
+
+//   useEffect(() => {
+//     setTotalImages(imageUrls.length);
+    
+//     // Load all images and track progress
+//     imageUrls.forEach(url => {
+//       const img = new Image();
+//       img.src = url;
+//       img.onload = () => {
+//         setLoadedImages(prev => prev + 1);
+//       };
+//       img.onerror = () => {
+//         console.error(`Failed to load image: ${url}`);
+//         setLoadedImages(prev => prev + 1);
+//       };
+//     });
+
+//     // Set minimum display time (4 seconds)
+//     const minDisplayTimer = setTimeout(() => {
+//       setMinimumTimePassed(true);
+//     }, 4000);
+
+//     return () => clearTimeout(minDisplayTimer);
+//   }, []);
+
+//   useEffect(() => {
+//     // Animate loading bar growth smoothly
+//     if (loadingBarRef.current) {
+//       gsap.to(loadingBarRef.current, {
+//         width: `${(loadedImages / totalImages) * 100}%`,
+//         duration: 0.5,
+//         ease: "power2.out"
+//       });
+//     }
+//   }, [loadedImages, totalImages]);
+
+//   useEffect(() => {
+//     // Check if we can exit (minimum time passed and all images loaded)
+//     if (minimumTimePassed && loadedImages === totalImages && totalImages > 0) {
+//       setReadyToExit(true);
+//     }
+//   }, [minimumTimePassed, loadedImages, totalImages]);
+
+//   useEffect(() => {
+//     if (readyToExit) {
+//       // Set final welcome text and stop changing
+//       setFinalWelcome(true);
+//       clearInterval(welcomeTextRef.current);
+//       welcomeTextRef.current.textContent = "Welcome";
+      
+//       // Final exit animation sequence
+//       const tl = gsap.timeline();
+      
+//       // 1. Animate loading elements out
+//       tl.to(".loading-bar-container", {
+//         opacity: 0,
+//         y: 20,
+//         duration: 0.5,
+//         ease: "power2.in"
+//       })
+//       // 2. Animate welcome text up and fade
+//       .to(welcomeTextRef.current, {
+//         y: -40,
+//         opacity: 0,
+//         duration: 0.75,
+//         ease: "power2.inOut"
+//       }, "-=0.3")
+//       // 3. Animate mask up and fade
+//       .to(maskRef.current, {
+//         y: "-100%",
+//         opacity: 0,
+//         duration: 0,
+//         ease: "power2.in"
+//       })
+//       // 4. Hide preloader and show content
+//       .set(preloaderRef.current, {
+//         display: "none"
+//       })
+//       .set(contentRef.current, {
+//         visibility: "visible"
+//       }, "-=0.5");
+
+//       // Activate parallax elements
+//       document.getElementById("object1")?.classList.add("as1");
+//       document.getElementById("object2")?.classList.add("as2");
+//       document.getElementById("object3")?.classList.add("as3");
+//       document.getElementById("object4")?.classList.add("as4");
+//       document.getElementById("object5")?.classList.add("as5");
+//       document.getElementById("object6")?.classList.add("as6");
+
+//       // Start floating animation for object4
+//       if (object4Ref.current) {
+//         gsap.to(object4Ref.current, {
+//           y: "+=20",
+//           duration: 3,
+//           repeat: -1,
+//           yoyo: true,
+//           ease: "sine.inOut"
+//         });
+//       }
+//     }
+//   }, [readyToExit]);
+
+//   useEffect(() => {
+//     if (!finalWelcome && welcomeTextRef.current) {
+//       const welcomeMessages = [
+//         "Welcome", "Bienvenido", "Bienvenue", "Willkommen", "Benvenuto", "Bem-vindo",
+//         "Welkom", 
+//         // "Добро пожаловать",
+//          "欢迎", "ようこそ", "환영합니다",
+//         "أهلا وسهلا", "स्वागत है", 
+//         // "Καλώς ήρθατε",
+//          "ברוך הבא", "Hoş geldiniz",
+//         "Välkommen", "Velkommen", "Tervetuloa", "Witaj", "Vítejte",
+//         "Üdvözöljük", "Bun venit", "ยินดีต้อนรับ", "Chào mừng", "Welcome"
+//       ];
+
+//       let currentIndex = 0;
+//       // Initial setup
+//       welcomeTextRef.current.textContent = welcomeMessages[currentIndex];
+//       gsap.set(welcomeTextRef.current, { opacity: 1, scale: 1 });
+
+//       const changeText = () => {
+//         currentIndex = (currentIndex + 1) % welcomeMessages.length;
+        
+//         // If this is the last message, don't change anymore
+//         if (welcomeMessages[currentIndex] === "Welcome") {
+//           setFinalWelcome(true);
+//           return;
+//         }
+        
+//         // Animate text out
+//         gsap.to(welcomeTextRef.current, {
+//           opacity: 0,
+//           scale: 0.9,
+//           duration: 0.2,
+//           ease: "power2.in",
+//           onComplete: () => {
+//             // Change text
+//             welcomeTextRef.current.textContent = welcomeMessages[currentIndex];
+//             // Animate new text in
+//             gsap.fromTo(welcomeTextRef.current, 
+//               { opacity: 1, scale: 1.1 },
+//               { opacity: 1, scale: 1, duration: 0.4, ease: "power2.out" }
+//             );
+//           }
+//         });
+//       };
+
+//       const intervalId = setInterval(changeText, 400);
+
+//       return () => clearInterval(intervalId);
+//     }
+//   }, [finalWelcome]);
+
+//   const loadingProgress = totalImages > 0 ? (loadedImages / totalImages) * 100 : 0;
+
+//   return (
+//     <div className="bggiver">
+//       <div className="preloader" ref={preloaderRef}>
+//         <div className="preloader-mask" ref={maskRef}>
+//           <div className="preloader-content">
+//             <h1 className="welcome-text" ref={welcomeTextRef}></h1>
+//             <div className="loading-bar-container">
+//               <div 
+//                 className="loading-bar"
+//                 ref={loadingBarRef}
+//                 style={{ width: "0%" }}
+//               ></div>
+//               <div className="loading-text">
+//                 Loading images: {loadedImages}/{totalImages}
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+
+//       <div className="container" ref={contentRef} style={{ visibility: "hidden" }}>
+//         <div className="scroll-down-arrow">↓</div>
+//         <img src="s-0.svg" alt="" data-value="3" className="object" id="object1" />
+//         <img src="s-1.svg" alt="" data-value="3" className="object" id="object2" />
+//         <img src="s-2.svg" alt="" data-value="3" className="object" id="object3" />
+//         <img 
+//           src="name.svg" 
+//           alt="" 
+//           data-value="10" 
+//           className="object" 
+//           id="object4" 
+//           ref={object4Ref}
+//         />
+//         <img src="s-4.svg" alt="" data-value="2" className="object" id="object5" />
+//         <img src="s-5.svg" alt="" data-value="2" className="object" id="object6" />
+//       </div>
+//       <div className="content-section"></div>
+//     </div>
+//   );
+// };
+
+// export default Parallax;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import React, { useEffect, useState, useRef } from "react";
 import "./parallax.css";
 import { gsap } from "gsap";
@@ -1621,7 +1870,6 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const Parallax = () => {
-  const [finalWelcome, setFinalWelcome] = useState(false);
   const [loadedImages, setLoadedImages] = useState(0);
   const [totalImages, setTotalImages] = useState(0);
   const [readyToExit, setReadyToExit] = useState(false);
@@ -1632,6 +1880,7 @@ const Parallax = () => {
   const welcomeTextRef = useRef(null);
   const loadingBarRef = useRef(null);
   const object4Ref = useRef(null);
+  const textChangeInterval = useRef(null);
   
   const imageUrls = [
     "s-0.svg",
@@ -1658,10 +1907,10 @@ const Parallax = () => {
       };
     });
 
-    // Set minimum display time (4 seconds)
+    // Set minimum display time (3 seconds)
     const minDisplayTimer = setTimeout(() => {
       setMinimumTimePassed(true);
-    }, 4000);
+    }, 3000);
 
     return () => clearTimeout(minDisplayTimer);
   }, []);
@@ -1686,10 +1935,15 @@ const Parallax = () => {
 
   useEffect(() => {
     if (readyToExit) {
-      // Set final welcome text and stop changing
-      setFinalWelcome(true);
-      clearInterval(welcomeTextRef.current);
-      welcomeTextRef.current.textContent = "Welcome";
+      // Clear the text changing interval
+      if (textChangeInterval.current) {
+        clearInterval(textChangeInterval.current);
+      }
+      
+      // Set final welcome text
+      if (welcomeTextRef.current) {
+        welcomeTextRef.current.textContent = "Welcome";
+      }
       
       // Final exit animation sequence
       const tl = gsap.timeline();
@@ -1712,7 +1966,7 @@ const Parallax = () => {
       .to(maskRef.current, {
         y: "-100%",
         opacity: 0,
-        duration: 0,
+        duration: 0.8,
         ease: "power2.in"
       })
       // 4. Hide preloader and show content
@@ -1745,28 +1999,23 @@ const Parallax = () => {
   }, [readyToExit]);
 
   useEffect(() => {
-    if (!finalWelcome && welcomeTextRef.current) {
+    if (welcomeTextRef.current && !readyToExit) {
       const welcomeMessages = [
         "Welcome", "Bienvenido", "Bienvenue", "Willkommen", "Benvenuto", "Bem-vindo",
-        "Welkom", "Добро пожаловать", "欢迎", "ようこそ", "환영합니다",
-        "أهلا وسهلا", "स्वागत है", "Καλώς ήρθατε", "ברוך הבא", "Hoş geldiniz",
+        "Welkom", "欢迎", "ようこそ", "환영합니다",
+        "أهلا وسهلا", "स्वागत है", "ברוך הבא", "Hoş geldiniz",
         "Välkommen", "Velkommen", "Tervetuloa", "Witaj", "Vítejte",
-        "Üdvözöljük", "Bun venit", "ยินดีต้อนรับ", "Chào mừng", "Welcome"
+        "Üdvözöljük", "Bun venit", "ยินดีต้อนรับ", "Chào mừng"
       ];
 
       let currentIndex = 0;
+      
       // Initial setup
       welcomeTextRef.current.textContent = welcomeMessages[currentIndex];
       gsap.set(welcomeTextRef.current, { opacity: 1, scale: 1 });
 
       const changeText = () => {
         currentIndex = (currentIndex + 1) % welcomeMessages.length;
-        
-        // If this is the last message, don't change anymore
-        if (welcomeMessages[currentIndex] === "Welcome") {
-          setFinalWelcome(true);
-          return;
-        }
         
         // Animate text out
         gsap.to(welcomeTextRef.current, {
@@ -1779,20 +2028,23 @@ const Parallax = () => {
             welcomeTextRef.current.textContent = welcomeMessages[currentIndex];
             // Animate new text in
             gsap.fromTo(welcomeTextRef.current, 
-              { opacity: 1, scale: 1.1 },
+              { opacity: 0, scale: 1.1 },
               { opacity: 1, scale: 1, duration: 0.4, ease: "power2.out" }
             );
           }
         });
       };
 
-      const intervalId = setInterval(changeText, 400);
+      // Start the interval and store the ID
+      textChangeInterval.current = setInterval(changeText, 400);
 
-      return () => clearInterval(intervalId);
+      return () => {
+        if (textChangeInterval.current) {
+          clearInterval(textChangeInterval.current);
+        }
+      };
     }
-  }, [finalWelcome]);
-
-  const loadingProgress = totalImages > 0 ? (loadedImages / totalImages) * 100 : 0;
+  }, [readyToExit]);
 
   return (
     <div className="bggiver">
