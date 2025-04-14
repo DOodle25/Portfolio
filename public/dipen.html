@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dipen Patel - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+/* Neon Sky Blue Glass Theme */
+:root {
+  --primary: #0f0f0f;
+  --primary-dark: #000000;
+  --secondary: #00f0ff;
+  --neon-pink: #ff00ff;
+  --neon-purple: #9d00ff;
+  --neon-blue: #00f0ff;
+  --neon-green: #00ff9d;
+  --light: rgba(255, 255, 255, 0.9);
+  --dark: #0a0a0a;
+  --gray: rgba(255, 255, 255, 0.6);
+  --light-gray: rgba(255, 255, 255, 0.2);
+  --success: #00ff9d;
+  --glass-bg: rgba(15, 15, 15, 0.25);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+  color: var(--light);
+  background-color: var(--primary);
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(0, 240, 255, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(0, 240, 255, 0.15) 0%, transparent 50%);
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Glass Morphism Effect */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border-radius: 12px;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+/* Header Styling */
+header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  position: relative;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--neon-blue), var(--neon-blue), transparent);
+  animation: gradientFlow 8s ease infinite;
+  background-size: 200% 200%;
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+h1 {
+  font-size: 2.5rem;
+  background: linear-gradient(90deg, var(--neon-blue), var(--neon-blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+}
+
+.contact-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--gray);
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 240, 255, 0.3);
+}
+
+.contact-item:hover {
+  color: var(--light);
+  background: rgba(0, 240, 255, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+}
+
+.contact-item i {
+  color: var(--neon-blue);
+}
+
+/* Section Styling */
+section {
+  margin-bottom: 3rem;
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  box-shadow: var(--glass-shadow);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at 50% 0%,
+    rgba(0, 240, 255, 0.05) 0%,
+    transparent 70%
+  );
+  z-index: -1;
+}
+
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 15px 30px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(0, 240, 255, 0.3);
+  border-color: var(--neon-blue);
+}
+
+h2 {
+  font-size: 1.8rem;
+  background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  position: relative;
+}
+
+h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--neon-blue);
+  border-radius: 3px;
+  box-shadow: 0 0 10px var(--neon-blue);
+}
+
+/* Experience/Project Items */
+.experience-item, 
+.project-item, 
+.research-item {
+  margin-bottom: 2.5rem;
+  position: relative;
+  padding-left: 1.5rem;
+  border-left: 3px solid rgba(0, 240, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.experience-item:hover, 
+.project-item:hover,
+.research-item:hover {
+  border-left-color: var(--neon-blue);
+  background-color: rgba(0, 240, 255, 0.05);
+}
+
+h3 {
+  font-size: 1.3rem;
+  color: var(--light);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.date {
+  color: var(--gray);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+/* List Styling */
+ul {
+  padding-left: 1rem;
+  margin-top: 1rem;
+}
+
+li {
+  margin-bottom: 0.75rem;
+  position: relative;
+  padding-left: 1.5rem;
+  color: var(--gray);
+  line-height: 1.7;
+  list-style-type: none;
+}
+
+li:before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--neon-blue);
+}
+
+/* Nested Lists */
+ul ul {
+  margin-top: 0.5rem;
+  padding-left: 1.5rem;
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.skill-category {
+  background: rgba(0, 240, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 0.8rem;
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.skill-category:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 10px 20px rgba(0, 0, 0, 0.3),
+    0 0 15px rgba(0, 240, 255, 0.2);
+  border-color: var(--neon-blue);
+}
+
+.skill-category h3 {
+  font-size: 1.1rem;
+  color: var(--neon-blue);
+  margin-bottom: 0.75rem;
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+}
+
+.skill-category p {
+  color: var(--gray);
+  line-height: 1.7;
+}
+
+/* Links */
+a {
+  color: var(--neon-blue);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+a:hover {
+  color: var(--neon-pink);
+  text-shadow: 0 0 10px rgba(255, 0, 255, 0.3);
+}
+
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background: rgba(0, 240, 255, 0.1);
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.github-link:hover {
+  background: rgba(0, 240, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+}
+
+.github-link i {
+  color: var(--neon-blue);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+  
+  section {
+    padding: 1.5rem;
+  }
+  
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-bar {
+    gap: 1rem;
+  }
+  
+  .contact-item {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--neon-blue);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neon-pink);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section {
+  animation: fadeIn 0.6s ease-out;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>Dipen Patel</h1>
+                <div class="contact-bar">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>India - 390002
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>pdipen135@gmail.com
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>+91 94273 01003
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-globe"></i>alynor.wiki
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>DOodle25
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-user"></i>dipen-patel
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Education -->
+        <section id="education">
+            <h2>Education</h2>
+            <div class="experience-item">
+                <h3>Parul University</h3>
+                <div class="date">July 2021 – May 2025</div>
+                <p>B.Tech in Computer Science</p>
+                <ul>
+                    <li>GPA: 3.46/4.0</li>
+                    <li>Coursework: Data Structure and Algorithms, Object Oriented Programming with CPP, Operating Systems, Professionalism And Corporate Ethics, Azure Fundamentals, Discrete Mathematics</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="experience-item">
+                <h3>Software Developer Intern - Gauraj InfoTech, Vadodara, Gujarat</h3>
+                <div class="date">Dec 2024 – Present</div>
+                <ul>
+                    <li>Developed a CRM with the admin, customer, and employee roles featuring three-layer authentication, Google / Facebook login, and more than 200 deployments and tests to optimize performance and reliability.</li>
+                    <li>Enabled task/request creation, with admins having the functionality to assign tasks to customers. Implemented real-time bidirectional communication using Socket.io, allowing assigned users to communicate.</li>
+                    <li>Built middleware authentication and role-based routing for three different user types, ensuring secure access control. over 40 Back-end methods, and 50 front-end calls to communicate between.</li>
+                    <li>Integrated Stripe for payment with interactive design and efficient data grids with advanced filtering, sorting, and search functionalities, pagination of over 4000+ test records.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>Software Developer Intern - ByteXL, Vadodara, Gujarat</h3>
+                <div class="date">May 2024 – July 2024</div>
+                <ul>
+                    <li>Contributed to the development of Code Canvas 2 a collaborative project involving a 6-member team, gaining hands-on experience in full-stack development and project collaboration.</li>
+                    <li>Acquired comprehensive skills in full stack development, database, system design, and software testing by working on live projects (7+) with azure and linux.</li>
+                    <li>Gained hands-on experience in the complete software development life-cycle on GitHub, deploying projects on Azure, and integrating AI driven solutions into applications.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Research -->
+        <section id="research">
+            <h2>Research</h2>
+            <div class="research-item">
+                <h3>Integrating Geographic-Population Insights With RFM models</h3>
+                <p>Dipen P. Patel, Dr. Vinod Patidar</p>
+                <div class="date">Jan 2025</div>
+                <p>Research yet to be published.</p>
+            </div>
+            <div class="research-item">
+                <h3>District Integrated Dashboard: A Project Report</h3>
+                <p>Dipen P. Patel, Heet Nandaniya, Dhruvesh Bawane, Sunny W. Thakare</p>
+                <div class="date">Jan 2023</div>
+                <p>DOI: 10.13140/RG.2.2.18738.21448/1</p>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="project-item">
+                <h3>District Integrated Dashboard (SSIP)</h3>
+                <a href="https://github.com/DOodle25/DID" class="github-link">
+                    <i class="fab fa-github"></i>github.com/DOodle25/DID
+                </a>
+                <div class="date">Feb 2024 - Oct 2024</div>
+                <ul>
+                    <li>Led a 3-member team to design and develop a website for Mehsana government initiatives, incorporating dynamic front-end design (7+ pages), interactive data visuals (10+), and maps for district progress.</li>
+                    <li>Utilized Chart.js for seamless data analysis and created a robust front-end to display ongoing government undertakings, enhancing user interaction and experience.</li>
+                    <li>Deployed a public demo with Django to test functionality, scalability, and user capacity, processing over 13,850 logs under high traffic conditions.</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <h3>Sync UP</h3>
+                <a href="https://github.com/DOodle25/SyncUP" class="github-link">
+                    <i class="fab fa-github"></i>github.com/DOodle25/SyncUP
+                </a>
+                <div class="date">Aug 2024 - Jan 2024</div>
+                <ul>
+                    <li>Developed a server-pinning solution for message synchronization and live messaging in a 1-person project, ensuring reliable performance.</li>
+                    <li>Created a dynamic, responsive UI to enhance user experience with smooth navigation, real-time updates, and organized communication channels with features like message threading, member invites, management.</li>
+                    <li>OTP-based email verification with Nodemailer for secure user authentication and streamlined onboarding.</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <h3>Code Canvas</h3>
+                <a href="https://github.com/DOodle25/Code-Canvas" class="github-link">
+                    <i class="fab fa-github"></i>github.com/DOodle25/Code-Canvas
+                </a>
+                <div class="date">May 2024 - Present</div>
+                <ul>
+                    <li>Collaborated in a team to create a model for component distribution through user contributions in 12+ languages, including HTML5, CSS3, JavaScript, React, Angular, and more.</li>
+                    <li>Designed and developed a responsive 8+ page web application using React, with reactive JSX functionalities for seamless user experience.</li>
+                    <li>Implemented secure login and signup using Passport.js and managed server-side operations, database interactions, and API calls with Node.js and Express.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <p>Python, JavaScript, C++, C, SQL</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Frontend Technology</h3>
+                    <p>HTML, CSS, React.js</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Backend Technology</h3>
+                    <p>Node.js, Express, Django</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Database</h3>
+                    <p>MySQL (SQL), MongoDB (NoSQL), PostgreSQL</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Digital and Design Tools</h3>
+                    <p>Figma, Canva, Gimp 2.10, Blender, GitHub, Porkbun, ngrok</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Technologies Worked With</h3>
+                    <p>MongoDB (NoSQL), PostgreSQL</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications -->
+        <section id="certifications">
+            <h2>Certifications</h2>
+            <div class="experience-item">
+                <ul>
+                    <li>NPTEL: Software Engineering Result: Elite Jul 2023 – Oct 2023</li>
+                    <ul>
+                        <li>Trained in Software Development LifeCycle, software design and deployment, UML diagrams, etc.</li>
+                    </ul>
+                    <li>NPTEL: Data Analytics with Python Result: Silver + Elite Jan 2024 – Apr 2024</li>
+                    <ul>
+                        <li>Learned important topics regarding data analysis, the importance of data, and decision-making.</li>
+                    </ul>
+                    <li>CISCO: Introduction to Cybersecurity Feb 2024</li>
+                    <ul>
+                        <li>Gained foundational knowledge in cybersecurity principles, threats, and risk management.</li>
+                    </ul>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Academic Activity -->
+        <section id="activities">
+            <h2>Academic Activity</h2>
+            <div class="experience-item">
+                <ul>
+                    <li>Qualified GATE (Paper Code: CS), one of the world's top 10 toughest exams, securing an All India Rank of 8129, demonstrating strong computer science fundamentals.</li>
+                    <li>Solved 150+ Leetcode questions, earning multiple achievements and enhancing problem-solving skills through consistent participation in challenges.</li>
+                    <li>Finalist in OdooCombat 2024 and engaged in 5+ hackathons such as MLH, tackling complex coding problems under pressure.</li>
+                    <li>Part of the A.S.M.P. by Parul University, where I worked under a professional mentor in my field and contributed to the development of a real-world project.</li>
+                    <li>Completed Harvard's CS50 and CS50 Web courses, expanding expertise in web development and app development.</li>
+                    <li>Passionate about design and traditional sketching, with over a decade of experience and multiple art competition wins both in school and outside.</li>
+                    <li>Participated in the College Reading Club for English LRWS and contributed to the Technical Club, enhancing technical and language skills.</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

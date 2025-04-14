@@ -2320,21 +2320,28 @@ const FooterContainer = styled("footer")(({ theme }) => ({
   backgroundColor: "hsl(87, 43%, 40%)",
   color: "#fff",
   padding: "3rem 0 0",
-  // textAlign: "center",
   position: "relative",
   overflow: "hidden",
-  // "&:before": {
-  //   content: '""',
-  //   position: "absolute",
-  //   top: 0,
-  //   left: 0,
-  //   right: 0,
-  //   height: "10px",
-  //   background: "linear-gradient(90deg, #97B931 0%, hsl(86, 43%, 38%) 100%)",
-  // },
 }));
 
 const VideoNotification = styled(Paper)(({ theme }) => ({
+  position: "fixed",
+  bottom: theme.spacing(10),
+  right: theme.spacing(2),
+  padding: theme.spacing(1.5),
+  borderRadius: "12px",
+  backgroundColor: "hsl(86, 43%, 38%)",
+  color: "white",
+  display: "flex",
+  alignItems: "center",
+  gap: theme.spacing(1),
+  zIndex: 1100,
+  boxShadow: "0 4px 20px rgba(0,0,0,0.2)",
+  animation: `${bounce} 2s ease infinite`,
+  cursor: "pointer",
+}));
+
+const ProjectsNotification = styled(Paper)(({ theme }) => ({
   position: "fixed",
   bottom: theme.spacing(10),
   right: theme.spacing(2),
@@ -2410,18 +2417,6 @@ const VideoGallerySection = styled(Box)(({ theme }) => ({
   marginTop: theme.spacing(4),
 }));
 
-// const VideoCard = styled(Paper)(({ theme }) => ({
-//   // borderRadius: "12px",
-//   borderRadius: "0px",
-//   overflow: "hidden",
-//   transition: "all 0.3s ease",
-//   animation: `${fadeIn} 0.5s ease forwards`,
-//   "&:hover": {
-//     transform: "translateY(-5px)",
-//     boxShadow: "0 15px 30px rgba(0,0,0,0.2)",
-//   },
-// }));
-
 const VideoCard = styled(Paper)(({ theme }) => ({
   borderRadius: "0px",
   overflow: "hidden",
@@ -2431,7 +2426,7 @@ const VideoCard = styled(Paper)(({ theme }) => ({
   background: "linear-gradient(145deg, #1a1a1a, #2d2d2d)",
   color: "#fff",
   boxShadow: "0 8px 20px rgba(0,0,0,0.15)",
-  
+
   "&:hover": {
     transform: "translateY(-5px)",
     boxShadow: "0 15px 30px rgba(0,0,0,0.3)",
@@ -2442,7 +2437,7 @@ const VideoCard = styled(Paper)(({ theme }) => ({
     },
     "& .premium-badge": {
       transform: "rotate(5deg) scale(1.1)",
-    }
+    },
   },
 
   "& .pay-button": {
@@ -2467,7 +2462,8 @@ const VideoCard = styled(Paper)(({ theme }) => ({
       left: "-100%",
       width: "100%",
       height: "100%",
-      background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent)",
+      background:
+        "linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent)",
       transition: "all 0.5s ease",
     },
     "&:hover": {
@@ -2478,7 +2474,7 @@ const VideoCard = styled(Paper)(({ theme }) => ({
     },
     "&:active": {
       transform: "scale(0.98)",
-    }
+    },
   },
 
   "& .premium-badge": {
@@ -2511,9 +2507,9 @@ const VideoCard = styled(Paper)(({ theme }) => ({
     "& span": {
       fontSize: "14px",
       opacity: 0.8,
-      marginLeft: "4px"
-    }
-  }
+      marginLeft: "4px",
+    },
+  },
 }));
 
 const ExpandButton = styled(Button)(({ theme }) => ({
@@ -2540,6 +2536,8 @@ const Footer = () => {
   const [status, setStatus] = useState("");
   const [showVideo, setShowVideo] = useState(false);
   const [showNotification, setShowNotification] = useState(true);
+  const [showNotification2, setShowNotification2] = useState(true);
+
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
   const [expanded, setExpanded] = useState(false);
@@ -2577,20 +2575,13 @@ const Footer = () => {
     {
       url: "https://github.com/user-attachments/assets/fe9d6dcf-261d-4b8c-9b54-bf7db2052007",
       title: "Project Demo 8",
-    }
-    //     "https://github.com/user-attachments/assets/66975bbb-fefc-44d0-b6b7-abdacad60603",
-//     "https://github.com/user-attachments/assets/2e76e1b5-e38c-40c1-a708-0db12c07f23a",
-//     "https://github.com/user-attachments/assets/1bbb40b6-7c62-4acf-8dcc-1f6a8de0b4d1",
-//     "https://github.com/user-attachments/assets/b9022278-9c21-4593-87c9-d71996262d35",
-//     "https://github.com/user-attachments/assets/b755f59b-3684-4793-a5a1-47b5932a1a73",
-//     "https://github.com/user-attachments/assets/199c8390-d342-4a65-83e2-35c2daabfef3",
-//     "https://github.com/user-attachments/assets/235ad0b8-1b91-4bc7-9a59-2b6d6e483e5a",
-//     "https://github.com/user-attachments/assets/fe9d6dcf-261d-4b8c-9b54-bf7db2052007",
+    },
   ];
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowNotification(false);
+      setShowNotification2(false);
     }, 800000);
     return () => clearTimeout(timer);
   }, []);
@@ -2644,23 +2635,6 @@ const Footer = () => {
     <>
       <VideoGallerySection>
         <Container maxWidth="lg">
-          {/* <Typography
-              variant="h4"
-              align="center"
-              gutterBottom
-              sx={{
-                fontWeight: 700,
-                color: "hsl(86, 43%, 38%)",
-                mb: 4,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <VideoLibrary sx={{ mr: 2 }} />
-              Project Videos
-            </Typography> */}
-
           <Grid container spacing={3} justifyContent="center">
             {displayedVideos.map((video, index) => (
               <Grid item xs={12} sm={6} md={4} key={index}>
@@ -2902,8 +2876,6 @@ const Footer = () => {
 
               <Box
                 sx={{
-                  // backgroundColor: "rgba(0,0,0,0.2)",
-                  // backgroundColor: "#88A861",
                   backgroundColor: "#799D4E",
                   border: "1px solid rgba(255,255,255,0.2)",
                   p: 2,
@@ -2943,208 +2915,7 @@ const Footer = () => {
             </Typography>
           </Box>
         </Container>
-        {/* </FooterContainer> */}
-
-        {/* <FooterContainer> */}
-        {/* <Container maxWidth="lg">
-          <Grid container spacing={4}>
-            <Grid item xs={12} sm={6} md={4}>
-              <Typography variant="h6" gutterBottom sx={{ fontWeight: 700 }}>
-                Contact Me
-              </Typography>
-              <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
-                <Email sx={{ mr: 1 }} />
-                <Link
-                  href="mailto:pdipen135@gmail.com"
-                  color="inherit"
-                  underline="hover"
-                >
-                  pdipen135@gmail.com
-                </Link>
-              </Box>
-              <Typography variant="body2" sx={{ mb: 1 }}>
-                <Box sx={{ display: "flex", alignItems: "center" }}>
-                  <Web sx={{ mr: 1 }} />
-                  India, Gujarat
-                </Box>
-              </Typography>
-              <Typography variant="body2">
-                <Box sx={{ display: "flex", alignItems: "center" }}>
-                  <Description sx={{ mr: 1 }} />
-                  Phone: +91 9427301003
-                </Box>
-              </Typography>
-            </Grid>
-
-            <Grid item xs={12} sm={6} md={4}>
-              <Typography variant="h6" gutterBottom sx={{ fontWeight: 700 }}>
-                Projects & Links
-              </Typography>
-              <Grid container spacing={1}>
-                <Grid item xs={6}>
-                  <Link
-                    href="https://github.com/DOodle25"
-                    target="_blank"
-                    color="inherit"
-                    underline="hover"
-                    display="block"
-                  >
-                    <GitHub sx={{ verticalAlign: "middle", mr: 1 }} />
-                    GitHub
-                  </Link>
-                  <Link
-                    href="https://www.linkedin.com/in/dipen-patel-792296260/"
-                    target="_blank"
-                    color="inherit"
-                    underline="hover"
-                    display="block"
-                  >
-                    <LinkedIn sx={{ verticalAlign: "middle", mr: 1 }} />
-                    LinkedIn
-                  </Link>
-                  <Link
-                    href="https://star-one-crm.alynor.wiki"
-                    target="_blank"
-                    color="inherit"
-                    underline="hover"
-                    display="block"
-                  >
-                    Star One CRM
-                  </Link>
-                </Grid>
-                <Grid item xs={6}>
-                  <Link
-                    href="https://district-integrated-dashboard.alynor.wiki"
-                    target="_blank"
-                    color="inherit"
-                    underline="hover"
-                    display="block"
-                  >
-                    DID Frontend
-                  </Link>
-                  <Link
-                    href="https://azure-portfolio.alynor.wiki"
-                    target="_blank"
-                    color="inherit"
-                    underline="hover"
-                    display="block"
-                  >
-                    Portfolio
-                  </Link>
-                  <Link
-                    href="https://www.alynor.wiki"
-                    target="_blank"
-                    color="inherit"
-                    underline="hover"
-                    display="block"
-                  >
-                    Domain Hosting
-                  </Link>
-                </Grid>
-              </Grid>
-            </Grid>
-
-            <Grid item xs={12} sm={6} md={4}>
-              <Typography variant="h6" gutterBottom sx={{ fontWeight: 700 }}>
-                Quick Message
-              </Typography>
-              <Box
-                component="form"
-                noValidate
-                autoComplete="off"
-                onSubmit={handleSubmit}
-              >
-                <TextField
-                  label="Your Email"
-                  variant="outlined"
-                  size="small"
-                  fullWidth
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  sx={{
-                    mb: 2,
-                    backgroundColor: "rgba(255,255,255,0.9)",
-                    borderRadius: "4px",
-                  }}
-                  required
-                />
-                <TextField
-                  label="Message"
-                  variant="outlined"
-                  size="small"
-                  fullWidth
-                  multiline
-                  rows={3}
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  sx={{
-                    backgroundColor: "rgba(255,255,255,0.9)",
-                    borderRadius: "4px",
-                  }}
-                  required
-                />
-                <Button
-                  type="submit"
-                  variant="contained"
-                  sx={{
-                    mt: 2,
-                    backgroundColor: "#97B931",
-                    "&:hover": { backgroundColor: "hsl(86, 43%, 38%)" },
-                  }}
-                  fullWidth
-                >
-                  Send Message
-                </Button>
-                {status && (
-                  <Typography variant="body2" sx={{ mt: 1, color: "#ffeb3b" }}>
-                    {status}
-                  </Typography>
-                )}
-              </Box>
-            </Grid>
-          </Grid>
-
-          <SocialIcons>
-            <IconButton
-              aria-label="GitHub"
-              href="https://github.com/DOodle25"
-              target="_blank"
-              color="inherit"
-              size="large"
-            >
-              <GitHub fontSize="large" />
-            </IconButton>
-            <IconButton
-              aria-label="LinkedIn"
-              href="https://www.linkedin.com/in/dipen-patel-792296260/"
-              target="_blank"
-              color="inherit"
-              size="large"
-            >
-              <LinkedIn fontSize="large" />
-            </IconButton>
-            <IconButton
-              aria-label="Portfolio"
-              href="https://azure-portfolio.alynor.wiki"
-              target="_blank"
-              color="inherit"
-              size="large"
-            >
-              <Web fontSize="large" />
-            </IconButton>
-            <IconButton
-              aria-label="Videos"
-              onClick={() => {
-                setShowVideo(true);
-                setShowNotification(false);
-              }}
-              color="inherit"
-              size="large"
-            >
-              <VideoLibrary fontSize="large" />
-            </IconButton>
-          </SocialIcons> */}
-
+        {/* 
         {showNotification && !isMobile && !showVideo && (
           <Zoom in={showNotification} timeout={500}>
             <VideoNotification onClick={() => setShowVideo(true)}>
@@ -3166,7 +2937,59 @@ const Footer = () => {
               </IconButton>
             </VideoNotification>
           </Zoom>
+        )} */}
+        {showNotification && !showVideo && (
+          <Zoom in={showNotification} timeout={500}>
+            <VideoNotification onClick={() => setShowVideo(true)}>
+              <Avatar sx={{ bgcolor: "#97B931" }}>
+                <VideoLibrary />
+              </Avatar>
+              <Box>
+                <Typography variant="body2" fontWeight="bold">
+                Watch my projects in action!
+                </Typography>
+
+              </Box>
+              <IconButton
+                size="small"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setShowNotification(false);
+                }}
+                sx={{ color: "white" }}
+              >
+                <Close fontSize="small" />
+              </IconButton>
+            </VideoNotification>
+          </Zoom>
+          
         )}
+        {/* {showNotification2 && !showVideo && (
+          <Zoom in={showNotification2} timeout={500} sx={{ marginBottom: "5rem" }}>
+            <ProjectsNotification component="a" href="/projects.html" target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
+              <Avatar sx={{ bgcolor: "#97B931" }}>
+                <VideoLibrary />
+              </Avatar>
+              <Box>
+                <Typography variant="body2" fontWeight="bold">
+                All Porojects
+                </Typography>
+
+              </Box>
+              <IconButton
+                size="small"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setShowNotificationw(false);
+                }}
+                sx={{ color: "white" }}
+              >
+                <Close fontSize="small" />
+              </IconButton>
+            </ProjectsNotification>
+          </Zoom>
+          
+        )} */}
 
         {showVideo && !isMobile && (
           <VideoBubble elevation={6}>

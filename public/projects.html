@@ -1,0 +1,1813 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dipen Patel | Full-Stack Developer Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      /* Neon Glass Theme Variables */
+      :root {
+        --primary: #0f0f0f;
+        --primary-dark: #000000;
+        --secondary: #00f0ff;
+        --neon-pink: #00f0ff;
+        --neon-purple: #00f0ff;
+        --neon-blue: #00f0ff;
+        --neon-green: #00ff9d;
+        --light: rgba(255, 255, 255, 0.9);
+        --dark: #0a0a0a;
+        --gray: rgba(255, 255, 255, 0.6);
+        --light-gray: rgba(255, 255, 255, 0.2);
+        --success: #00ff9d;
+        --glass-bg: rgba(15, 15, 15, 0.25);
+        --glass-border: rgba(255, 255, 255, 0.1);
+        --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+        line-height: 1.6;
+        color: var(--light);
+        background-color: var(--primary);
+        background-image: radial-gradient(
+            circle at 25% 25%,
+            rgba(0, 240, 255, 0.15) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 75% 75%,
+            rgba(0, 240, 255, 0.15) 0%,
+            transparent 50%
+          );
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Glass Morphism Effect */
+      .glass {
+        background: var(--glass-bg);
+        backdrop-filter: blur(16px) saturate(180%);
+        -webkit-backdrop-filter: blur(16px) saturate(180%);
+        border-radius: 12px;
+        border: 1px solid var(--glass-border);
+        box-shadow: var(--glass-shadow);
+      }
+
+      /* Header & Navigation */
+      header {
+        background: linear-gradient(
+          135deg,
+          rgba(0, 0, 0, 0.9),
+          rgba(15, 15, 15, 0.7)
+        );
+        color: white;
+        /* padding: 3rem 0; */
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+      }
+
+      header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+            circle at 20% 30%,
+            rgba(0, 240, 255, 0.1) 0%,
+            transparent 30%
+          ),
+          radial-gradient(
+            circle at 80% 70%,
+            rgba(0, 240, 255, 0.1) 0%,
+            transparent 30%
+          );
+        z-index: -1;
+      }
+
+      /* header::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink), transparent);
+        animation: gradientFlow 8s ease infinite;
+        background-size: 200% 200%;
+      } */
+
+      @keyframes gradientFlow {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .profile-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+      }
+
+      .profile-avatar {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3.5rem;
+        color: var(--neon-blue);
+        border: 2px solid var(--neon-blue);
+        box-shadow: 0 0 15px rgba(0, 240, 255, 0.5),
+          inset 0 0 15px rgba(0, 240, 255, 0.3);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .profile-avatar::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(
+          to bottom right,
+          transparent,
+          transparent,
+          transparent,
+          rgba(0, 240, 255, 0.1),
+          transparent
+        );
+        transform: rotate(30deg);
+        animation: shine 6s infinite linear;
+      }
+
+      @keyframes shine {
+        0% {
+          transform: translateX(-100%) rotate(30deg);
+        }
+        100% {
+          transform: translateX(100%) rotate(30deg);
+        }
+      }
+
+      .profile-header h1 {
+        font-size: 2.5rem;
+        background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+      }
+
+      .profile-header p {
+        font-size: 1.2rem;
+        color: var(--gray);
+      }
+
+      .social-links {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 1.5rem;
+      }
+
+      .social-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.5rem;
+        border-radius: 2rem;
+        background: rgba(0, 0, 0, 0.3);
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: 1px solid var(--neon-blue);
+        box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .social-link::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(0, 240, 255, 0.2),
+          transparent
+        );
+        transition: all 0.5s ease;
+      }
+
+      .social-link:hover {
+        background: rgba(0, 240, 255, 0.1);
+        transform: translateY(-3px);
+        box-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+      }
+
+      .social-link:hover::before {
+        left: 100%;
+      }
+
+      .social-link i {
+        font-size: 1.2rem;
+        color: var(--neon-blue);
+      }
+
+      /* Main Content */
+      main {
+        padding: 3rem 0;
+      }
+
+      section {
+        margin-bottom: 4rem;
+        position: relative;
+      }
+
+      /* section::before {
+        content: "";
+        position: absolute;
+        top: -20px;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--neon-blue), transparent);
+      } */
+
+      .section-header {
+        margin-top: 15px;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 2.5rem;
+        position: relative;
+      }
+
+      .section-header h2 {
+        font-size: 2rem;
+        background: linear-gradient(90deg, var(--neon-blue), var(--neon-blue));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        position: relative;
+        display: inline-block;
+        text-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+      }
+      /* 
+      .section-header h2::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background: var(--neon-blue);
+        border-radius: 3px;
+        box-shadow: 0 0 10px var(--neon-blue);
+      } */
+
+      .section-header i {
+        font-size: 1.8rem;
+        color: var(--neon-blue);
+        text-shadow: 0 0 10px var(--neon-blue);
+      }
+
+      /* Projects Grid */
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 2rem;
+      }
+
+      .project-card {
+        background: var(--glass-bg);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-radius: 1rem;
+        overflow: hidden;
+        transition: all 0.4s ease;
+        border: 1px solid rgba(0, 240, 255, 0.2);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        position: relative;
+      }
+
+      .project-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+          circle at 50% 0%,
+          rgba(0, 240, 255, 0.1) 0%,
+          transparent 70%
+        );
+        z-index: -1;
+      }
+
+      .project-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4),
+          0 0 20px rgba(0, 240, 255, 0.3);
+        border-color: var(--neon-blue);
+      }
+
+      .project-image {
+        height: 200px;
+        background: linear-gradient(
+          45deg,
+          rgba(0, 0, 0, 0.7),
+          rgba(15, 15, 15, 0.8)
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--gray);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .project-image::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          45deg,
+          transparent,
+          rgba(0, 240, 255, 0.05),
+          transparent
+        );
+      }
+
+      .project-image i {
+        font-size: 4rem;
+        opacity: 0.7;
+        color: var(--neon-blue);
+        text-shadow: 0 0 10px var(--neon-blue);
+      }
+
+      .project-content {
+        padding: 1.8rem;
+      }
+
+      .project-title {
+        font-size: 1.4rem;
+        margin-bottom: 0.8rem;
+        color: var(--light);
+        font-weight: 600;
+      }
+
+      .project-card p {
+        color: var(--gray);
+        margin-bottom: 1rem;
+        line-height: 1.7;
+      }
+
+      .project-links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+
+      .project-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.6rem 1.2rem;
+        border-radius: 0.5rem;
+        background: rgba(0, 240, 255, 0.1);
+        color: var(--neon-blue);
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(0, 240, 255, 0.3);
+        box-shadow: 0 0 10px rgba(0, 240, 255, 0.1);
+      }
+
+      .project-link:hover {
+        background: rgba(0, 240, 255, 0.2);
+        transform: translateY(-2px);
+        box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+      }
+
+      .project-link i {
+        font-size: 0.9rem;
+      }
+
+      .project-meta {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1.5rem;
+        font-size: 0.9rem;
+        color: var(--gray);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 1rem;
+      }
+
+      /* Video Gallery */
+      .video-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 2rem;
+      }
+
+      .video-container {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        height: 0;
+        overflow: hidden;
+        border-radius: 0.8rem;
+        background: rgba(0, 0, 0, 0.5);
+        border: 1px solid rgba(0, 240, 255, 0.2);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .video-container:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4),
+          0 0 20px rgba(0, 240, 255, 0.2);
+        border-color: var(--neon-blue);
+      }
+
+      .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      /* Tech Stack */
+      .tech-stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+      }
+
+      .tech-badge {
+        height: 32px;
+        transition: all 0.3s ease;
+        filter: drop-shadow(0 0 5px rgba(0, 240, 255, 0.5));
+        opacity: 0.9;
+      }
+
+      .tech-badge:hover {
+        transform: scale(1.15);
+        opacity: 1;
+        filter: drop-shadow(0 0 10px var(--neon-blue));
+      }
+
+      /* About Card */
+      .about-card {
+        background: var(--glass-bg);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-radius: 1rem;
+        padding: 2.5rem;
+        border: 1px solid rgba(0, 240, 255, 0.2);
+        box-shadow: var(--glass-shadow);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .about-card::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle at center,
+          rgba(0, 240, 255, 0.05) 0%,
+          transparent 70%
+        );
+        z-index: -1;
+      }
+
+      .about-card p {
+        color: var(--gray);
+        margin-bottom: 1.5rem;
+        line-height: 1.7;
+      }
+
+      .about-card strong {
+        color: var(--light);
+        font-weight: 600;
+      }
+
+      .about-card ul {
+        padding-left: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .about-card li {
+        color: var(--gray);
+        margin-bottom: 0.5rem;
+        position: relative;
+      }
+
+      .about-card li::before {
+        content: "▹";
+        position: absolute;
+        left: -1.2rem;
+        color: var(--neon-blue);
+      }
+
+      /* Skills Grid */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 2rem;
+      }
+
+      .skill-category {
+        background: var(--glass-bg);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        padding: 1.8rem;
+        border-radius: 0.8rem;
+        border: 1px solid rgba(0, 240, 255, 0.2);
+        box-shadow: var(--glass-shadow);
+        transition: all 0.3s ease;
+      }
+
+      .skill-category:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4),
+          0 0 20px rgba(0, 240, 255, 0.2);
+        border-color: var(--neon-blue);
+      }
+
+      .skill-category h3 {
+        color: var(--neon-blue);
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+        text-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+      }
+
+      .skill-category p {
+        color: var(--gray);
+        line-height: 1.7;
+      }
+
+      /* Footer */
+      footer {
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 4rem 0;
+        text-align: center;
+        position: relative;
+        border-top: 1px solid rgba(0, 240, 255, 0.2);
+      }
+
+      footer::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+            circle at 20% 30%,
+            rgba(0, 240, 255, 0.05) 0%,
+            transparent 30%
+          ),
+          radial-gradient(
+            circle at 80% 70%,
+            rgba(255, 0, 255, 0.05) 0%,
+            transparent 30%
+          );
+        z-index: -1;
+      }
+
+      .footer-content {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      .contact-info {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        color: var(--gray);
+        transition: all 0.3s ease;
+      }
+
+      .contact-item:hover {
+        color: var(--neon-blue);
+        text-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+      }
+
+      .contact-item i {
+        color: var(--neon-blue);
+        font-size: 1.2rem;
+      }
+
+      footer p {
+        color: var(--gray);
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      section {
+        animation: fadeIn 0.6s ease-out;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .projects-grid,
+        .video-gallery,
+        .skills-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .section-header h2 {
+          font-size: 1.6rem;
+        }
+
+        .profile-avatar {
+          width: 100px;
+          height: 100px;
+          font-size: 2.5rem;
+        }
+
+        .profile-header h1 {
+          font-size: 2rem;
+        }
+
+        .about-card {
+          padding: 1.5rem;
+        }
+      }
+
+      /* Neon Glow Effects */
+      .neon-text {
+        text-shadow: 0 0 5px currentColor;
+      }
+
+      .neon-box {
+        box-shadow: 0 0 10px currentColor;
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: var(--primary);
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: var(--neon-blue);
+        border-radius: 5px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--neon-blue);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <!-- <div class="profile-header">
+          <div class="profile-avatar">
+            <img 
+            src="Project-CodeCanvas-Login-Signup/images/odoo hackthon.jpeg" 
+            alt="DP" 
+            style="
+              width: 100%; 
+              height: 100%; 
+              border-radius: 50%; 
+              object-fit: cover;
+            " 
+          />          </div>
+          <h1>Dipen Patel</h1>
+          <p>Full-Stack Developer & Technical Innovator</p>
+          <div class="social-links">
+            <a
+              href="https://github.com/DOodle25"
+              class="social-link"
+              target="_blank"
+            >
+              <i class="fab fa-github"></i> GitHub
+            </a>
+            <a
+              href="https://www.linkedin.com/in/dipen-patel-792296260/"
+              class="social-link"
+              target="_blank"
+            >
+              <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="Dipen.html" class="social-link" target="_blank">
+              <i class="fas fa-file-alt"></i> Resume
+            </a>
+          </div>
+        </div> -->
+        <div class="profile-header">
+          <div class="profile-content">
+            <!-- <div class="profile-avatar">
+                <img src="Project-CodeCanvas-Login-Signup/images/odoo hackthon.jpeg" alt="DP" />
+              </div> -->
+            <div class="profile-info">
+              <h1>Dipen Patel</h1>
+              <p class="profile-title">
+                Full-Stack Developer & Technical Innovator
+              </p>
+              <div class="social-links">
+                <a
+                  href="https://github.com/DOodle25"
+                  class="social-link"
+                  target="_blank"
+                >
+                  <i class="fab fa-github"></i> GitHub
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/dipen-patel-792296260/"
+                  class="social-link"
+                  target="_blank"
+                >
+                  <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="Dipen.html" class="social-link" target="_blank">
+                  <i class="fas fa-file-alt"></i> Resume
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <style>
+          .profile-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            /* background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); */
+            border-radius: 15px;
+            /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); */
+            max-width: 800px;
+            margin: 2rem auto;
+          }
+
+          .profile-content {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            text-align: center;
+          }
+
+          .profile-avatar {
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 0px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            flex-shrink: 0;
+          }
+
+          .profile-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+
+          /* .profile-info {
+              flex: 1;
+              min-width: 250px;
+            } */
+
+          /* .profile-header h1 {
+              margin: 0 0 0.5rem 0;
+              font-size: 2rem;
+              color: #333;
+            } */
+
+          /* .profile-title {
+              margin: 0 0 1.5rem 0;
+              font-size: 1.1rem;
+              color: #555;
+              font-weight: 500;
+            } */
+
+          /* .social-links {
+              display: flex;
+              gap: 1rem;
+              justify-content: center;
+              flex-wrap: wrap;
+            } */
+
+          /* .social-link {
+              display: inline-flex;
+              align-items: center;
+              gap: 0.5rem;
+              padding: 0.5rem 1rem;
+              background: white;
+              border-radius: 50px;
+              color: #333;
+              text-decoration: none;
+              transition: all 0.3s ease;
+              box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            } */
+
+          /* .social-link:hover {
+              transform: translateY(-3px);
+              box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+              background: #4a6fa5;
+              color: white;
+            }
+            
+            @media (max-width: 600px) {
+              .profile-content {
+                flex-direction: column;
+                gap: 1.5rem;
+              }
+              
+              .profile-avatar {
+                width: 120px;
+                height: 120px;
+              }
+            } */
+        </style>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- Featured Projects -->
+      <section id="featured-projects">
+        <div class="section-header">
+          <!-- <i class="fas fa-star"></i> -->
+          <h2 id="projects">Featured Projects</h2>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Star One CRM -->
+          <div class="project-card">
+            <div class="project-image">
+              <i class="fas fa-project-diagram"></i>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Star One CRM System</h3>
+              <p>
+                Complete CRM solution with admin, customer, and employee roles
+                featuring three-layer authentication.
+              </p>
+              <div class="project-links">
+                <a
+                  href="https://star-one-crm.alynor.wiki"
+                  class="project-link"
+                  target="_blank"
+                >
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+                <a
+                  href="https://star-one-crm-server.alynor.wiki"
+                  class="project-link"
+                  target="_blank"
+                >
+                  <i class="fas fa-server"></i> Server
+                </a>
+              </div>
+              <div class="project-meta">
+                <span>MERN Stack</span>
+                <span>2024</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- District Integrated Dashboard -->
+          <div class="project-card">
+            <div class="project-image">
+              <i class="fas fa-map-marked-alt"></i>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">District Integrated Dashboard</h3>
+              <p>
+                Government initiative website with dynamic front-end design and
+                interactive data visuals.
+              </p>
+              <div class="project-links">
+                <a
+                  href="https://district-integrated-dashboard.alynor.wiki"
+                  class="project-link"
+                  target="_blank"
+                >
+                  <i class="fas fa-external-link-alt"></i> Frontend
+                </a>
+                <a
+                  href="https://district-integrated-dashboard-backend-cudqcnbehzgye3c9.centralindia-01.azurewebsites.net/admin/login/?next=/admin/"
+                  class="project-link"
+                  target="_blank"
+                >
+                  <i class="fas fa-cog"></i> Admin
+                </a>
+              </div>
+              <div class="project-meta">
+                <span>Django + React</span>
+                <span>2024</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Portfolio -->
+          <div class="project-card">
+            <div class="project-image">
+              <i class="fas fa-map-marked-alt"></i>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Portfolio Site</h3>
+              <p>
+                portfolio website with amazing user experience parallax effects
+                scrolling animations and project display.
+              </p>
+              <div class="project-links">
+                <a
+                  href="https://azure-portfolio.alynor.wiki"
+                  class="project-link"
+                  target="_blank"
+                >
+                  <i class="fas fa-external-link-alt"></i> Frontend
+                </a>
+                <!--  -->
+              </div>
+              <div class="project-meta">
+                <span>React</span>
+                <span>2024</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- All Projects -->
+      <section id="all-projects">
+        <div class="section-header">
+          <i class="fas fa-code"></i>
+          <h2>All Projects</h2>
+        </div>
+
+        <div class="projects-grid">
+          <!-- SyncUP -->
+          <div class="project-card">
+            <div class="project-image">
+              <i class="fas fa-comments"></i>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">SyncUP</h3>
+              <p>
+                Server-pinning solution for message synchronization and live
+                messaging.
+              </p>
+              <div class="project-links">
+                <a
+                  href="https://github.com/DOodle25/SyncUP"
+                  class="project-link"
+                  target="_blank"
+                >
+                  <i class="fab fa-github"></i> Source Code
+                </a>
+              </div>
+              <div class="project-meta">
+                <span>Node.js</span>
+                <span>2024</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Code Canvas -->
+          <div class="project-card">
+            <div class="project-image">
+              <i class="fas fa-paint-brush"></i>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Code Canvas</h3>
+              <p>
+                Component distribution model through user contributions in 12+
+                languages.
+              </p>
+              <div class="project-links">
+                <a
+                  href="Project-CodeCanvas-Login-Signup/Code-Canvas-Landing-Page.html"
+                  class="project-link"
+                  target="_blank"
+                >
+                  <i class="fas fa-external-link-alt"></i> Prototype
+                </a>
+                <a
+                  href="https://github.com/DOodle25/Code-Canvas-Server"
+                  class="project-link"
+                  target="_blank"
+                >
+                  <i class="fab fa-github"></i> Server
+                </a>
+              </div>
+              <div class="project-meta">
+                <span>React + Node</span>
+                <span>2024</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- DID React Native -->
+          <div class="project-card">
+            <div class="project-image">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">DID React Native</h3>
+              <p>Mobile version of District Integrated Dashboard.</p>
+              <div class="project-links">
+                <a
+                  href="https://github.com/DOodle25/DID-React-Native"
+                  class="project-link"
+                  target="_blank"
+                >
+                  <i class="fab fa-github"></i> Source Code
+                </a>
+              </div>
+              <div class="project-meta">
+                <span>React Native</span>
+                <span>2024</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- GradialD -->
+          <div class="project-card">
+            <div class="project-image">
+              <i class="fas fa-palette"></i>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">GradialD</h3>
+              <p>Design tool for creating gradient patterns.</p>
+              <div class="project-links">
+                <a
+                  href="https://github.com/DOodle25/GradialD"
+                  class="project-link"
+                  target="_blank"
+                >
+                  <i class="fab fa-github"></i> Source Code
+                </a>
+              </div>
+              <div class="project-meta">
+                <span>JavaScript</span>
+                <span>2023</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- AIChatBot -->
+          <div class="project-card">
+            <div class="project-image">
+              <i class="fas fa-robot"></i>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">AIChatBot</h3>
+              <p>AI-powered chatbot with natural language processing.</p>
+              <div class="project-links">
+                <a
+                  href="https://github.com/DOodle25/AIChatBot"
+                  class="project-link"
+                  target="_blank"
+                >
+                  <i class="fab fa-github"></i> Source Code
+                </a>
+              </div>
+              <div class="project-meta">
+                <span>Python</span>
+                <span>2023</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- System Design -->
+          <div class="project-card">
+            <div class="project-image">
+              <i class="fas fa-sitemap"></i>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">System Design</h3>
+              <p>Collection of system design patterns and architectures.</p>
+              <div class="project-links">
+                <a
+                  href="https://github.com/DOodle25/SystemDesign"
+                  class="project-link"
+                  target="_blank"
+                >
+                  <i class="fab fa-github"></i> Source Code
+                </a>
+              </div>
+              <div class="project-meta">
+                <span>Various</span>
+                <span>2023</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Video Gallery -->
+      <section id="demos">
+        <div class="section-header">
+          <i class="fas fa-video"></i>
+          <h2>Project Demos</h2>
+        </div>
+
+        <div class="video-gallery">
+          <div class="video-container">
+            <iframe
+              src="https://github.com/user-attachments/assets/66975bbb-fefc-44d0-b6b7-abdacad60603"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="video-container">
+            <iframe
+              src="https://github.com/user-attachments/assets/2e76e1b5-e38c-40c1-a708-0db12c07f23a"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="video-container">
+            <iframe
+              src="https://github.com/user-attachments/assets/1bbb40b6-7c62-4acf-8dcc-1f6a8de0b4d1"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="video-container">
+            <iframe
+              src="https://github.com/user-attachments/assets/b9022278-9c21-4593-87c9-d71996262d35"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="video-container">
+            <iframe
+              src="https://github.com/user-attachments/assets/b755f59b-3684-4793-a5a1-47b5932a1a73"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="video-container">
+            <iframe
+              src="https://github.com/user-attachments/assets/199c8390-d342-4a65-83e2-35c2daabfef3"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="video-container">
+            <iframe
+              src="https://github.com/user-attachments/assets/235ad0b8-1b91-4bc7-9a59-2b6d6e483e5a"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="video-container">
+            <iframe
+              src="https://github.com/user-attachments/assets/fe9d6dcf-261d-4b8c-9b54-bf7db2052007"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- Hosting Services -->
+      <section id="hosting">
+        <div class="section-header">
+          <i class="fas fa-server"></i>
+          <h2>Hosting Services</h2>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Domain Hosting -->
+          <div class="project-card">
+            <div class="project-image">
+              <i class="fas fa-globe"></i>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Domain Hosting</h3>
+              <p>Custom domain hosting configuration panel.</p>
+              <div class="project-links">
+                <a
+                  href="https://www.alynor.wiki"
+                  class="project-link"
+                  target="_blank"
+                >
+                  <i class="fas fa-external-link-alt"></i> Visit
+                </a>
+              </div>
+              <div class="project-meta">
+                <span>DNS Management</span>
+                <span>Active</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ngrok Services -->
+          <div class="project-card">
+            <div class="project-image">
+              <i class="fas fa-network-wired"></i>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Ngrok Services</h3>
+              <p>Tunnel services for local development.</p>
+              <div class="project-links">
+                <a
+                  href="https://ngrok-1.alynor.wiki"
+                  class="project-link"
+                  target="_blank"
+                >
+                  <i class="fas fa-external-link-alt"></i> Ngrok 1
+                </a>
+                <a
+                  href="https://ngrok-2.alynor.wiki"
+                  class="project-link"
+                  target="_blank"
+                >
+                  <i class="fas fa-external-link-alt"></i> Ngrok 2
+                </a>
+              </div>
+              <div class="project-meta">
+                <span>Development</span>
+                <span>Active</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Render Services -->
+          <div class="project-card">
+            <div class="project-image">
+              <i class="fas fa-cloud"></i>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Render Services</h3>
+              <p>Cloud hosting for various projects.</p>
+              <div class="project-links">
+                <a
+                  href="https://onrender-1.alynor.wiki"
+                  class="project-link"
+                  target="_blank"
+                >
+                  <i class="fas fa-external-link-alt"></i> DID Backend
+                </a>
+                <a
+                  href="https://onrender-4.alynor.wiki"
+                  class="project-link"
+                  target="_blank"
+                >
+                  <i class="fas fa-external-link-alt"></i> DID Frontend
+                </a>
+              </div>
+              <div class="project-meta">
+                <span>Cloud Hosting</span>
+                <span>Active</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Me Section -->
+      <section id="about">
+        <div class="section-header">
+          <i class="fas fa-user"></i>
+          <h2>About Me</h2>
+        </div>
+        <div class="about-card">
+          <p>
+            Full-stack developer with expertise in MERN stack and Django.
+            Passionate about creating efficient, scalable web applications with
+            intuitive user interfaces. Strong problem-solving skills and a
+            commitment to continuous learning.
+          </p>
+
+          <div class="section-header" style="margin: 2rem 0 1rem">
+            <i class="fas fa-graduation-cap"></i>
+            <h3 style="font-size: 1.4rem">Education</h3>
+          </div>
+          <p>
+            <strong>Parul University</strong> | B.Tech in Computer Science
+            (2021-2025)
+          </p>
+          <p>
+            GPA: 3.46/4.0 | Coursework: Data Structures, OOP, OS, Azure
+            Fundamentals
+          </p>
+
+          <div class="section-header" style="margin: 2rem 0 1rem">
+            <i class="fas fa-briefcase"></i>
+            <h3 style="font-size: 1.4rem">Experience</h3>
+          </div>
+          <p>
+            <strong>Gauraj InfoTech</strong> | Software Developer Intern (Dec
+            2024-Present)
+          </p>
+          <ul>
+            <li>Developed CRM with three-layer authentication</li>
+            <li>Implemented real-time communication with Socket.io</li>
+            <li>Integrated Stripe for payments</li>
+          </ul>
+
+          <p>
+            <strong>ByteXL</strong> | Software Developer Intern (May-July 2024)
+          </p>
+          <ul>
+            <li>Worked on 7+ live projects with Azure and Linux</li>
+            <li>Gained full-stack development experience</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Tech Stack -->
+      <section id="tech-stack">
+        <div class="section-header">
+          <i class="fas fa-code"></i>
+          <h2>Technology Stack</h2>
+        </div>
+
+        <div class="tech-stack">
+          <!-- <img
+            src="https://img.shields.io/badge/MERN-stack-green"
+            alt="MERN"
+            class="tech-badge"
+          /> -->
+          <img
+            src="https://img.shields.io/badge/React-blue"
+            alt="React"
+            class="tech-badge"
+          />
+          <img
+            src="https://img.shields.io/badge/Node.js-brightgreen"
+            alt="Node.js"
+            class="tech-badge"
+          />
+          <!-- <img
+            src="https://img.shields.io/badge/Django-darkgreen"
+            alt="Django"
+            class="tech-badge"
+          /> -->
+          <img
+            src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white"
+            alt="Python"
+            class="tech-badge"
+          />
+          <img
+            src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black"
+            alt="JavaScript"
+            class="tech-badge"
+          />
+          <img
+            src="https://img.shields.io/badge/C%2B%2B-00599C?logo=c%2B%2B&logoColor=white"
+            alt="C++"
+            class="tech-badge"
+          />
+          <img
+            src="https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white"
+            alt="MySQL"
+            class="tech-badge"
+          />
+          <img
+            src="https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white"
+            alt="MongoDB"
+            class="tech-badge"
+          />
+          <!-- <img
+            src="https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white"
+            alt="PostgreSQL"
+            class="tech-badge"
+          /> -->
+          <img
+          src="https://img.shields.io/badge/Azure-0089D6?logo=microsoft-azure&logoColor=white"
+          alt="Azure"
+          class="tech-badge"
+        />
+        <img
+          src="https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=black"
+          alt="Linux"
+          class="tech-badge"
+        />
+        <img
+          src="https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white"
+          alt="GitHub"
+          class="tech-badge"
+        />
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills">
+        <div class="section-header">
+          <i class="fas fa-cogs"></i>
+          <h2>Skills</h2>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3>Languages</h3>
+            <p>Python, JavaScript, C++, C, SQL</p>
+          </div>
+
+          <div class="skill-category">
+            <h3>Frontend</h3>
+            <p>HTML, CSS, React.js, React Native</p>
+          </div>
+
+          <div class="skill-category">
+            <h3>Backend</h3>
+            <p>Node.js, Express, Django</p>
+          </div>
+
+          <div class="skill-category">
+            <h3>Database</h3>
+            <p>MySQL, MongoDB, PostgreSQL</p>
+          </div>
+
+          <div class="skill-category">
+            <h3>Tools</h3>
+            <p>Figma, Canva, Gimp 2.10, Blender, GitHub, Porkbun, ngrok</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Certifications Section -->
+      <section id="certifications">
+        <div class="section-header">
+          <i class="fas fa-certificate"></i>
+          <h2>Certifications</h2>
+        </div>
+
+        <div class="project-card">
+          <div class="project-content">
+            <h3 class="project-title">NPTEL: Software Engineering</h3>
+            <p>Result: Elite | Jul 2023 – Oct 2023</p>
+            <p>
+              Trained in Software Development LifeCycle, software design and
+              deployment, UML diagrams, etc.
+            </p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-content">
+            <h3 class="project-title">NPTEL: Data Analytics with Python</h3>
+            <p>Result: Silver + Elite | Jan 2024 – Apr 2024</p>
+            <p>
+              Learned important topics regarding data analysis, the importance
+              of data, and decision-making.
+            </p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-content">
+            <h3 class="project-title">CISCO: Introduction to Cybersecurity</h3>
+            <p>Feb 2024</p>
+            <p>
+              Gained foundational knowledge in cybersecurity principles,
+              threats, and risk management.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Academic Activities -->
+      <section id="activities">
+        <div class="section-header">
+          <i class="fas fa-trophy"></i>
+          <h2>Academic Activities</h2>
+        </div>
+
+        <div class="project-card">
+          <div class="project-content">
+            <ul>
+              <li>
+                Qualified GATE (Paper Code: CS) with All India Rank of 8129
+              </li>
+              <li>Solved 150+ Leetcode questions</li>
+              <li>
+                Finalist in OdooCombat 2024 and participated in 5+ hackathons
+              </li>
+              <li>Part of A.S.M.P. by Parul University</li>
+              <li>Completed Harvard's CS50 and CS50 Web courses</li>
+              <li>Passionate about design and traditional sketching</li>
+              <li>Participated in College Reading Club and Technical Club</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <!-- <div class="tech-stack">
+
+          </div> -->
+
+          <div class="contact-info">
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <span>pdipen135@gmail.com</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <span>+91 94273 01003</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-globe"></i>
+              <span>alynor.wiki</span>
+            </div>
+          </div>
+
+          <p>© 2024 Dipen Patel. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <!-- Add this anywhere in your HTML body (best placed before your video section) -->
+    <div class="neon-pop-container">
+      <div class="neon-pop">
+        <div class="neon-pop-content">
+          <span class="neon-text">🚀 Check out my projects in action!</span>
+          <div class="neon-buttons">
+            <button class="neon-btn neon-btn-blue" id="scrollToVideos">
+              <i class="fas fa-video"></i> Watch Demos
+            </button>
+            <button class="neon-btn neon-btn-pink" id="scrollToProjects">
+              <i class="fas fa-code"></i> View Code
+            </button>
+          </div>
+        </div>
+        <div class="neon-pop-close">&times;</div>
+      </div>
+    </div>
+
+    <style>
+      /* Neon Pop Component Styles */
+      .neon-pop-container {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 1000;
+        animation: floatUpDown 4s ease-in-out infinite;
+      }
+
+      .neon-pop {
+        background: rgba(15, 15, 15, 0.8);
+        backdrop-filter: blur(10px);
+        border: 1px solid var(--neon-blue);
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 0 15px rgba(0, 240, 255, 0.5),
+          inset 0 0 10px rgba(0, 240, 255, 0.2);
+        position: relative;
+        max-width: 300px;
+        transform: scale(0.95);
+        transition: all 0.3s ease;
+      }
+
+      .neon-pop:hover {
+        transform: scale(1);
+        box-shadow: 0 0 25px rgba(0, 240, 255, 0.7),
+          inset 0 0 15px rgba(0, 240, 255, 0.3);
+      }
+
+      .neon-pop-content {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .neon-text {
+        color: var(--light);
+        font-weight: 600;
+        text-shadow: 0 0 5px var(--neon-blue);
+        font-size: 1.1rem;
+      }
+
+      .neon-buttons {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .neon-btn {
+        padding: 8px 15px;
+        border: none;
+        border-radius: 6px;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .neon-btn i {
+        font-size: 0.9rem;
+      }
+
+      .neon-btn::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(
+          to bottom right,
+          transparent,
+          transparent,
+          transparent,
+          rgba(255, 255, 255, 0.1),
+          transparent
+        );
+        transform: rotate(30deg);
+      }
+
+      .neon-btn:hover::before {
+        animation: shine 1.5s infinite;
+      }
+
+      .neon-btn-blue {
+        background: rgba(0, 240, 255, 0.15);
+        color: var(--neon-blue);
+        border: 1px solid var(--neon-blue);
+        box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+      }
+
+      .neon-btn-blue:hover {
+        background: rgba(0, 240, 255, 0.25);
+        box-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+      }
+
+      .neon-btn-pink {
+        background: rgba(255, 0, 255, 0.15);
+        color: var(--neon-pink);
+        border: 1px solid var(--neon-pink);
+        box-shadow: 0 0 10px rgba(255, 0, 255, 0.3);
+      }
+
+      .neon-btn-pink:hover {
+        background: rgba(255, 0, 255, 0.25);
+        box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+      }
+
+      .neon-pop-close {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        color: var(--gray);
+        cursor: pointer;
+        font-size: 1.2rem;
+        transition: all 0.2s ease;
+      }
+
+      .neon-pop-close:hover {
+        color: var(--neon-pink);
+        transform: scale(1.2);
+      }
+
+      /* Animations */
+      @keyframes floatUpDown {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      @keyframes shine {
+        0% {
+          transform: translateX(-100%) rotate(30deg);
+        }
+        100% {
+          transform: translateX(100%) rotate(30deg);
+        }
+      }
+
+      /* Make sure these variables are in your :root */
+      :root {
+        --neon-blue: #00f0ff;
+        --neon-pink: #ff00ff;
+        --light: rgba(255, 255, 255, 0.9);
+        --gray: rgba(255, 255, 255, 0.6);
+      }
+    </style>
+
+    <script>
+      // Add this script to make the buttons functional
+      document.addEventListener("DOMContentLoaded", function () {
+        // Scroll to videos section
+        document
+          .getElementById("scrollToVideos")
+          .addEventListener("click", function () {
+            const videosSection = document.getElementById("demos");
+            if (videosSection) {
+              videosSection.scrollIntoView({ behavior: "smooth" });
+            }
+          });
+
+        // Scroll to projects section
+        document
+          .getElementById("scrollToProjects")
+          .addEventListener("click", function () {
+            const projectsSection = document.getElementById("projects");
+            if (projectsSection) {
+              projectsSection.scrollIntoView({ behavior: "smooth" });
+            }
+          });
+
+        // Close button functionality
+        const closeBtn = document.querySelector(".neon-pop-close");
+        const neonPop = document.querySelector(".neon-pop-container");
+
+        if (closeBtn && neonPop) {
+          closeBtn.addEventListener("click", function () {
+            neonPop.style.opacity = "0";
+            setTimeout(() => {
+              neonPop.style.display = "none";
+            }, 300);
+          });
+        }
+
+        // Show popup after delay
+        setTimeout(() => {
+          neonPop.style.opacity = "1";
+        }, 3000);
+      });
+    </script>
+  </body>
+</html>
