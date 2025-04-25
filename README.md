@@ -18,8 +18,6 @@
 
 # My Portfolio
 
-
-
 https://github.com/user-attachments/assets/0ee186e2-62b0-4e3b-b136-cc03bce7ed99
 
 
